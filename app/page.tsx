@@ -19,6 +19,8 @@ import TiltedCard from './components/TiltedCard';
 import ClickSpark from './components/ClickSpark';
 import ScrollVelocity from './components/ScrollVelocity';
 import FlowingMenu from './components/FlowingMenu'
+import ScrollFloat from './components/ScrollFloat';
+
 
 // FONTS
 import {
@@ -129,8 +131,7 @@ export default function Home() {
             className="scrambled-text-demo overflow-visible"
             radius={100}
             duration={1.2}
-            speed={0.5}>
-
+            speed={0.5}> 
             <h1
               className={`${righteous.className} text-3x2 sm:text-6xl tracking-wide text-white`}
               data-aos="fade-up"
@@ -230,13 +231,18 @@ export default function Home() {
 
 
       {/* Projects Section */}
-      <section className="max-w-5xl mx-auto py-20 px-6">
-        <h2
-          className="text-2xl font-semibold mb-8 text-center"
-          data-aos="fade-up"
+      <section className="max-w-7xl mx-auto py-24 px-6 text-center">
+        <ScrollFloat
+          animationDuration={1}
+          ease='back.inOut(2)'
+          scrollStart='center bottom+=80%'
+          scrollEnd='bottom bottom-=40%'
+          stagger={0.03}
+          
         >
-          Projects
-        </h2>
+            Projects
+        </ScrollFloat>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((project) => (
             <div
