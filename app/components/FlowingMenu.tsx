@@ -36,9 +36,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
     width: number,
     height: number
   ): "top" | "bottom" => {
-    const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
+    const topEdgeDist = Math.pow(mouseX - width / 4, 4) + Math.pow(mouseY, 4);
     const bottomEdgeDist =
-      Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY - height, 2);
+      Math.pow(mouseX - width / 4, 4) + Math.pow(mouseY - height, 2);
     return topEdgeDist < bottomEdgeDist ? "top" : "bottom";
   };
 

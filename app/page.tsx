@@ -187,7 +187,8 @@ export default function Home() {
           <p className="text-lg text-gray-400 leading-relaxed">
             I’m a passionate web developer who loves creating clean, minimalistic
             designs with great user experience. I specialize in React, Next.js, and
-            TailwindCSS.
+            TailwindCSS. Additionally, I am a self taught graphic designer with the usage of various tools 
+            inclduing various mobile and computer software. 
           </p>
         </div>
 
@@ -263,7 +264,8 @@ export default function Home() {
       {/* Contact Section */}
        <section
         className="max-w-3xl mx-auto py-20 px-6 text-center"
-        data-aos="fade-up"
+        data-aos="zoom-in-up"
+        data-aos-delay="450"
       >
       <h2 className="text-2xl font-semibold mb-4">Get In Touch</h2>
       <p className="text-gray-400 mb-6">
@@ -282,7 +284,7 @@ export default function Home() {
 
 
       {/* Social Links */}
-        <div style={{ height: '400px', position: 'relative' }}>
+        <div style={{ height: '350px', position: 'relative' }}>
           <FlowingMenu items={demoItems} />
         </div>
     </section>
