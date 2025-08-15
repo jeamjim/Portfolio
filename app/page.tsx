@@ -7,6 +7,8 @@ import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { animate } from 'animejs';
 import me from '../public/me1.jpg'
 
+
+
 //BACKGROUNDS
 import LightRays from './components/LightRays';
 
@@ -56,7 +58,7 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-gradient-to-b from-gray-900 to-black text-white">
-
+          
     {/* <div style={{ width: '100%', height: '600px', position: 'relative' }}>
       <LightRays
         raysOrigin="top-center"
@@ -100,20 +102,18 @@ export default function Home() {
             height={320}
             priority
           /> */}
-
-          
         </div>
 
         {/* Text Content */}
-        <div className="max-w-8xl">
+        <div className="max-w-8x3">
           <ScrambledText
-            className="scrambled-text-demo"
+            className="scrambled-text-demo overflow-visible"
             radius={100}
             duration={1.2}
             speed={0.5}
           >
             <h1
-              className={`${bebas.className} text-4xl sm:text-8xl tracking-wide text-white`}
+              className={`${lato.className} text-3xl sm:text-6xl tracking-wide text-white`}
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -140,6 +140,12 @@ export default function Home() {
           {/* <ShinyText text="Scroll Down" /> */}
         </div>
       </section>
+
+
+
+
+
+
 
 
       {/* About Section */}
@@ -172,10 +178,18 @@ export default function Home() {
           showTooltip={true}
           displayOverlayContent={true}
           overlayContent={
-            <p className="tilted-card-demo-text text-xl">James P. Lim</p>
+            <div className="absolute top-2 left-75">
+              <p className="tilted-card-demo-text text-2xl font-bold">
+                James P. Lim
+              </p>
+            </div>
           }
         />
       </section>
+
+
+
+
 
 
 
