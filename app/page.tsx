@@ -5,8 +5,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { animate } from 'animejs';
-import me from '../public/me1.jpg'
-
 
 
 //BACKGROUNDS
@@ -18,6 +16,8 @@ import ShinyText from "./components/ShinyText";
 import ScrambledText from './components/ScrambledText';
 import Cubes from './components/Cubes'
 import TiltedCard from './components/TiltedCard';
+import ClickSpark from './components/ClickSpark';
+import ScrollVelocity from './components/ScrollVelocity';
 
 // FONTS
 import {
@@ -29,15 +29,19 @@ import {
   Lato, 
   Montserrat, 
   Roboto,
+  Geist, 
+  Geist_Mono,
+  Monoton,
+  Righteous
 } from "next/font/google";
 
 
 // FONTS FUNCTIONS
-const montserrat = Montserrat({
-  weight: "400",
-  subsets: ["latin"],
-});
-// FONTS
+const montserrat = Montserrat({weight: "400",subsets: ["latin"],});
+const righteous = Righteous({weight: "400",subsets: ["latin"],});
+const monoton = Monoton({weight: "400",subsets: ["latin"],});   //viable
+const geist = Geist({weight: "400",subsets: ["latin"],});
+const geist_mono = Geist_Mono({weight: "400",subsets: ["latin"],})
 const roboto = Roboto({weight: "400",subsets: ["latin"],});
 const bebas = Bebas_Neue({weight: "400",subsets: ["latin"],});
 const lato = Lato({weight: "400",subsets: ["latin"],});
@@ -57,8 +61,17 @@ export default function Home() {
   }, []);
 
   return (
+
+    <ClickSpark
+      sparkColor='#fff'
+      sparkSize={20}
+      sparkRadius={17}
+      sparkCount={8}
+      duration={400}
+    >
+
     <div className="font-sans bg-gradient-to-b from-gray-900 to-black text-white">
-          
+    
     {/* <div style={{ width: '100%', height: '600px', position: 'relative' }}>
       <LightRays
         raysOrigin="top-center"
@@ -91,32 +104,17 @@ export default function Home() {
 
 
       <section className="min-h-screen flex flex-col md:flex-row items-center justify-start px-6 gap-12 text-center md:text-left relative">
-        {/* Profile Image */}
-        <div data-aos="zoom-in" className="relative flex-shrink-0">
-          <div className="absolute -inset-4"></div>
-          {/* <Image
-            className="shadow-lg hover:scale-105 transition-transform duration-500 rounded-full"
-            src="/me1.jpg"
-            alt="Profile photo"
-            width={320}
-            height={320}
-            priority
-          /> */}
-        </div>
-
-        {/* Text Content */}
         <div className="max-w-8x3">
           <ScrambledText
             className="scrambled-text-demo overflow-visible"
             radius={100}
             duration={1.2}
-            speed={0.5}
-          >
+            speed={0.5}>
+
             <h1
-              className={`${lato.className} text-3xl sm:text-6xl tracking-wide text-white`}
+              className={`${righteous.className} text-3x2 sm:text-6xl tracking-wide text-white`}
               data-aos="fade-up"
-              data-aos-delay="200"
-            >
+              data-aos-delay="200">
               Invest in the future through advanced Web Designing
             </h1>
           </ScrambledText>
@@ -125,8 +123,7 @@ export default function Home() {
           <p
             className={`${roboto.className} mt-0 text-gray-400 leading-relaxed text-2x3`}
             data-aos="fade-up"
-            data-aos-delay="400"
-          >
+            data-aos-delay="400">
             THE FUTURE IS HERE!
           </p>
         </div>
@@ -143,6 +140,16 @@ export default function Home() {
 
 
 
+      <div className="flex justify-center items-center w-full my-15">
+        <div className="w-full max-w-8xl h-20  rounded-lg backdrop-blur-md flex items-center">
+          <ScrollVelocity
+            texts={['FrontEnd Dev', 'UI designer']}
+            velocity={80}
+            className="text-3xl sm:text-5xl font-extrabold text-white"
+          />
+        </div>
+      </div>
+
 
 
 
@@ -151,7 +158,8 @@ export default function Home() {
       {/* About Section */}
       <section
         className="max-w-7xl mx-auto py-24 px-6 flex flex-col md:flex-row items-center gap-12"
-        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos="zoom-in-up"
       >
         {/* Left: Text */}
         <div className="flex-1 text-center md:text-left">
@@ -165,7 +173,7 @@ export default function Home() {
 
         {/* Right: Image Card */}
         <TiltedCard
-          imageSrc= "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=GZmllvBFZH0Q7kNvwFxQ8jL&_nc_oc=AdkfWtYDdLJkYNxpnaf8ruBwpVmXA1MQ4QOJVp2AugMrecg4-acBlfWc4whhOS40JRw&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=0SxiAXlrpK6-hcZjIC2Orw&oh=00_AfXg-IFWvGKY1Ex4PpbxnU53CDzZghT4qJpM-AvQOJn9Iw&oe=68A49534"
+          imageSrc= "https://avatars.githubusercontent.com/u/148544294?v=4"
           altText="ProfilePicture"
           captionText="You can call me Jimjim"
           containerHeight="400px"
@@ -178,12 +186,19 @@ export default function Home() {
           showTooltip={true}
           displayOverlayContent={true}
           overlayContent={
-            <div className="absolute top-2 left-75">
-              <p className="tilted-card-demo-text text-2xl font-bold">
+            <div
+              className="absolute top-5 left-50 px-4 py-2 rounded-lg"
+              style={{
+                background: 'rgba(0, 0, 0, 0.35)',
+                backdropFilter: 'blur(3px)',
+                WebkitBackdropFilter: 'blur(3px)',
+                whiteSpace: 'nowrap'
+              }}>
+              <p className="tilted-card-demo-text text-2xl font-bold text-white m-0">
                 James P. Lim
               </p>
             </div>
-          }
+            }
         />
       </section>
 
@@ -270,5 +285,7 @@ export default function Home() {
         © {new Date().getFullYear()} James P, Lim. All rights reserved.
       </footer>
     </div>
+</ClickSpark>
+
   );
 }
