@@ -9,6 +9,7 @@ import { animate } from 'animejs';
 // COMPONENTS
 import CircularText from "./components/CircularText";
 import ShinyText from "./components/ShinyText";
+import ScrambledText from './components/ScrambledText';
 
 // FONTS
 import {
@@ -79,51 +80,62 @@ export default function Home() {
   return (
     <div className="font-sans bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        {/* Artistic Image */}
-        <div data-aos="zoom-in" className="relative">
-          <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-blue-500 blur-2xl opacity-30 animate-pulse"></div>
-          <Image
-            className="rounded-full border-4 border-white/10 shadow-lg hover:scale-105 transition-transform duration-500"
-            src="/me.jpg"
-            alt="Profile photo"
-            width={220}
-            height={220}
-            priority
-          />
-        </div>
+      <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 gap-12 text-center md:text-left">
+      {/* Artistic Image */}
+      <div data-aos="zoom-in" className="relative flex-shrink-0">
+        <div className="absolute -inset-4"></div>
+        <Image
+          className="shadow-lg hover:scale-105 transition-transform duration-500 rounded-full"
+          src="/me1.jpg"
+          alt="Profile photo"
+          width={320} // increased size
+          height={320} // increased size
+          priority
+        />
+      </div>
 
-        {/* Name with artistic font */}
-        <h1
-          className={`${montserrat.className} mt-6 text-4xl sm:text-8xl tracking-wide text-white`}
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          James P. Lim
-        </h1>
+      {/* Text content */}
+      <div className="max-w-8xl">
+        {/* Name */}
+        <ScrambledText
+            className="scrambled-text-demo"
+            radius={100}
+            duration={1.2}
+            speed={0.5}>
+          <h1
+            className={`${bebas.className} text-4xl sm:text-8xl tracking-wide text-white`}
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            James P. Lim
+          </h1>
+        </ScrambledText>
 
         {/* Bio */}
-        <p
-          className={`${roboto.className}"mt-4 max-w-2xl text-gray-400 leading-relaxed"`}
+        
+          <p
+            className={`${roboto.className} mt-4 text-gray-400 leading-relaxed`}
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            Invest in the future through advanced Web Designing 
+          </p>
+        {/* Shiny Text */}
+        <div
           data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          I’m a passionate web developer who loves crafting clean, minimalistic,
-          and modern digital experiences. Specializing in React, Next.js, and
-          TailwindCSS, I bring ideas to life with elegant design and
-          smooth functionality.
-        </p>
+          data-aos-delay="600"
+          className="mt-6">
 
-        <div data-aos="fade-up" data-aos-delay="400" style={{padding: "50px"}}>
-          <ShinyText text="Scroll Down" />
+        <ShinyText text="Scroll Down" />
+
+          {/* <div data-aos="zoom-in" style={{ display: "flex", justifyContent: "center"}}>
+            <CircularText
+              text="Scroll Down• "
+            />
+          </div> */}
         </div>
-
-        {/* <div data-aos="zoom-in" style={{ display: "flex", justifyContent: "center"}}>
-          <CircularText
-            text="Scroll Down• "
-          />
-        </div> */}
-      </section>
+      </div>
+    </section>
 
       {/* About Section */}
       <section
