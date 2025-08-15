@@ -18,6 +18,7 @@ import Cubes from './components/Cubes'
 import TiltedCard from './components/TiltedCard';
 import ClickSpark from './components/ClickSpark';
 import ScrollVelocity from './components/ScrollVelocity';
+import FlowingMenu from './components/FlowingMenu'
 
 // FONTS
 import {
@@ -49,6 +50,25 @@ const playfair = Playfair_Display({ weight: ["400", "700"], subsets: ["latin"] }
 const pacifico = Pacifico({ weight: ["400"], subsets: ["latin"] });
 const greatVibes = Great_Vibes({ weight: ["400",], subsets: ["latin"] });
 const dancing_Script = Dancing_Script({ weight: ["400", "700"], subsets: ["latin"] });
+
+// FLOWING MENU
+const demoItems = [
+  { link: 'https://www.facebook.com/share/14GPy5T84Ks/', 
+    text: 'FaceBook', 
+    image: 'https://picsum.photos/600/400?random=1' },
+
+  { link: 'https://www.instagram.com/po_chiso?igsh=MXJmZjZkOGtpemc1Yw==', 
+    text: 'Instagram', 
+    image: 'https://picsum.photos/600/400?random=2' },
+
+  { link: 'https://github.com/jeamjim', 
+    text: 'Github', 
+    image: 'https://picsum.photos/600/400?random=3' },
+
+  { link: '#', 
+    text: 'Telegram', 
+    image: 'https://picsum.photos/600/400?random=4' }
+];
 
 
 export default function Home() {
@@ -158,7 +178,7 @@ export default function Home() {
       {/* About Section */}
       <section
         className="max-w-7xl mx-auto py-24 px-6 flex flex-col md:flex-row items-center gap-12"
-        data-aos-delay="300"
+        data-aos-delay="350"
         data-aos="zoom-in-up"
       >
         {/* Left: Text */}
@@ -233,52 +253,49 @@ export default function Home() {
         </div>
       </section>
 
+
+
+
+
+
+
+
       {/* Contact Section */}
        <section
-      className="max-w-3xl mx-auto py-20 px-6 text-center"
-      data-aos="fade-up"
-    >
+        className="max-w-3xl mx-auto py-20 px-6 text-center"
+        data-aos="fade-up"
+      >
       <h2 className="text-2xl font-semibold mb-4">Get In Touch</h2>
       <p className="text-gray-400 mb-6">
         Feel free to reach out for collaborations or just a friendly hello!
       </p>
 
+
       {/* Email Button */}
-      <a
+      {/* <a
         href="mailto:your@email.com"
         className="inline-block bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
       >
         Say Hello
-      </a>
+      </a> */}
+
+
 
       {/* Social Links */}
-      <div className="flex justify-center gap-6 mt-8">
-        <a
-          href="https://github.com/jeamjim"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition text-2xl"
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="https://facebook.com/jeamjiim"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition text-2xl"
-        >
-          <FaFacebook />
-        </a>
-        <a
-          href="https://instagram.com/po_chiso/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition text-2xl"
-        >
-          <FaInstagram />
-        </a>
-      </div>
+        <div style={{ height: '400px', position: 'relative' }}>
+          <FlowingMenu items={demoItems} />
+        </div>
     </section>
+
+
+
+
+
+
+
+
+
+
 
       {/* Footer */}
       <footer className="text-center text-gray-500 py-6 border-t border-white/10">
