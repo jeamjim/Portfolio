@@ -4,12 +4,74 @@ import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import { animate } from 'animejs';
+
+// COMPONENTS
+import CircularText from "./components/CircularText";
+import ShinyText from "./components/ShinyText";
+
+// FONTS
+import {
+  Bebas_Neue, 
+  Playfair_Display, 
+  Dancing_Script, 
+  Great_Vibes, 
+  Pacifico, 
+  Lato, 
+  Montserrat, 
+  Roboto,
+} from "next/font/google";
+
+
+// FONTS FUNCTIONS
+const montserrat = Montserrat({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const bebas = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const lato = Lato({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({ 
+  weight: ["400", "700"], 
+  subsets: ["latin"] 
+});
+
+const pacifico = Pacifico({ 
+  weight: ["400"], 
+  subsets: ["latin"] 
+});
+
+const greatVibes = Great_Vibes({ 
+  weight: ["400",], 
+  subsets: ["latin"] 
+});
+
+const dancing_Script = Dancing_Script({ 
+  weight: ["400", "700"], 
+  subsets: ["latin"] 
+});
+
+
+
 
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 800, // animation duration
-      once: true, // run only once
+      duration: 950,
+      once: true,
       easing: "ease-out-cubic",
     });
   }, []);
@@ -31,9 +93,9 @@ export default function Home() {
           />
         </div>
 
-        {/* Name */}
+        {/* Name with artistic font */}
         <h1
-          className="mt-6 text-4xl sm:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400"
+          className={`${montserrat.className} mt-6 text-4xl sm:text-8xl tracking-wide text-white`}
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -42,7 +104,7 @@ export default function Home() {
 
         {/* Bio */}
         <p
-          className="mt-4 max-w-2xl text-gray-400 leading-relaxed"
+          className={`${roboto.className}"mt-4 max-w-2xl text-gray-400 leading-relaxed"`}
           data-aos="fade-up"
           data-aos-delay="400"
         >
@@ -51,6 +113,16 @@ export default function Home() {
           TailwindCSS, I bring ideas to life with elegant design and
           smooth functionality.
         </p>
+
+        <div data-aos="fade-up" data-aos-delay="400" style={{padding: "50px"}}>
+          <ShinyText text="Scroll Down" />
+        </div>
+
+        {/* <div data-aos="zoom-in" style={{ display: "flex", justifyContent: "center"}}>
+          <CircularText
+            text="Scroll Down• "
+          />
+        </div> */}
       </section>
 
       {/* About Section */}
