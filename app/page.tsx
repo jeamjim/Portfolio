@@ -126,8 +126,7 @@ export default function Home() {
         </div> */}
 
 
-      {/* <div className="min-h-screen w-full bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]"> */}
-      <div className="min-h-screen w-full font-sans bg-gradient-to-b from-gray-900 to-black flex justify-center items-center px-[10px] py-[10px]">
+      <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]">
 
         {/* Bento container */}
         <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[10px] mb-[10px]">
