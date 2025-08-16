@@ -21,6 +21,7 @@ import ScrollVelocity from './components/ScrollVelocity';
 import FlowingMenu from './components/FlowingMenu'
 import ScrollFloat from './components/ScrollFloat';
 import TextPressure from './components/TextPressure';
+import Masonry from './components/Masonry';
 
 
 // FONTS
@@ -53,6 +54,32 @@ const playfair = Playfair_Display({ weight: ["400", "700"], subsets: ["latin"] }
 const pacifico = Pacifico({ weight: ["400"], subsets: ["latin"] });
 const greatVibes = Great_Vibes({ weight: ["400",], subsets: ["latin"] });
 const dancing_Script = Dancing_Script({ weight: ["400", "700"], subsets: ["latin"] });
+
+
+
+//masonry
+const items = [
+    {
+      id: "1",
+      img: "https://picsum.photos/id/1015/600/900?grayscale",
+      url: "https://example.com/one",
+      height: 400,
+    },
+    {
+      id: "2",
+      img: "https://picsum.photos/id/1011/600/750?grayscale",
+      url: "https://example.com/two",
+      height: 250,
+    },
+    {
+      id: "3",
+      img: "https://picsum.photos/id/1020/600/800?grayscale",
+      url: "https://example.com/three",
+      height: 600,
+    },
+
+];
+
 
 // FLOWING MENU
 const demoItems = [
@@ -158,7 +185,7 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                THE FUTURE IS HERE!
+                THE FUTURE OF WEB DESIGN
               </p>
             </div>
 
@@ -180,16 +207,16 @@ export default function Home() {
 
 
           <ScrambledText
-            className="scrambled-text-demo overflow-visible"
+            className="scrambled-text-demo overflow-visible  mt-25"
             radius={100}
             duration={1.2}
             speed={0.10}> 
             <div className="flex justify-center items-center w-full my-15">
               <div className="w-full max-w-8xl h-20  rounded-lg backdrop-blur-md flex items-center">
                 <ScrollVelocity
-                  texts={['Welcome!', '']}
+                  texts={['Welcome!  ', '']}
                   velocity={80}
-                  className="text-6xl sm:text-6xl font-extrabold text-white font-serif"
+                  className={`${bebas.className} text-6xl sm:text-6xl font-extrabold text-white `}
                 />
               </div>
             </div>
@@ -202,7 +229,7 @@ export default function Home() {
 
       {/* About Section */}
       <section
-        className="max-w-7xl mx-auto py-24 px-6 flex flex-col md:flex-row items-center gap-12"
+        className="max-w-7xl mx-auto py-24 px-6 flex flex-col md:flex-row items-center gap-10"
         data-aos-delay="350"
         data-aos="zoom-in-up"
       >
@@ -255,7 +282,7 @@ export default function Home() {
 
 
       {/* Projects Section */}
-      <section className="max-w-7xl mx-auto py-24 px-6 text-center">
+      <section className="max-w-7xl mx-auto py-24 px-6 text-center ">
         <ScrollFloat
           animationDuration={1}
           ease='back.inOut(-10)'
