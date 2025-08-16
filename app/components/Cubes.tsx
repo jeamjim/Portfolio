@@ -1,8 +1,34 @@
-import { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const Cubes = ({
-  gridSize = 2,
+interface Gap {
+  row: number;
+  col: number;
+}
+interface Duration {
+  enter: number;
+  leave: number;
+}
+
+export interface CubesProps {
+  gridSize?: number;
+  cubeSize?: number;
+  maxAngle?: number;
+  radius?: number;
+  easing?: gsap.EaseString;
+  duration?: Duration;
+  cellGap?: number | Gap;
+  borderStyle?: string;
+  faceColor?: string;
+  shadow?: boolean | string;
+  autoAnimate?: boolean;
+  rippleOnClick?: boolean;
+  rippleColor?: string;
+  rippleSpeed?: number;
+}
+
+const Cubes: React.FC<CubesProps> = ({
+  gridSize = 10,
   cubeSize,
   maxAngle = 45,
   radius = 3,
@@ -17,69 +43,69 @@ const Cubes = ({
   rippleColor = "#fff",
   rippleSpeed = 2,
 }) => {
-  const sceneRef = useRef(null);
-  const rafRef = useRef(null);
-  const idleTimerRef = useRef(null);
+  const sceneRef = useRef<HTMLDivElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const userActiveRef = useRef(false);
-  const simPosRef = useRef({ x: 0, y: 0 });
-  const simTargetRef = useRef({ x: 0, y: 0 });
-  const simRAFRef = useRef(null);
+  const simPosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const simTargetRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const simRAFRef = useRef<number | null>(null);
 
   const colGap =
     typeof cellGap === "number"
       ? `${cellGap}px`
-      : (cellGap)?.col !== undefined
-        ? `${(cellGap).col}px`
+      : (cellGap as Gap)?.col !== undefined
+        ? `${(cellGap as Gap).col}px`
         : "5%";
   const rowGap =
     typeof cellGap === "number"
       ? `${cellGap}px`
-      : (cellGap)?.row !== undefined
-        ? `${(cellGap).row}px`
+      : (cellGap as Gap)?.row !== undefined
+        ? `${(cellGap as Gap).row}px`
         : "5%";
 
   const enterDur = duration.enter;
   const leaveDur = duration.leave;
 
   const tiltAt = useCallback(
-    (rowCenter, colCenter) => {
+    (rowCenter: number, colCenter: number) => {
       if (!sceneRef.current) return;
       sceneRef.current
-        .querySelectorAll(".cube")
-          .forEach((cube) => {
-            const r = +cube.dataset.row;
-            const c = +cube.dataset.col;
-            const dist = Math.hypot(r - rowCenter, c - colCenter);
-            if (dist <= radius) {
-              const pct = 1 - dist / radius;
-              const angle = pct * maxAngle;
-              gsap.to(cube, {
-                duration: enterDur,
-                ease: easing,
-                overwrite: true,
-                rotateX: -angle,
-                rotateY: angle,
-              });
-            } else {
-              gsap.to(cube, {
-                duration: leaveDur,
-                ease: "power3.out",
-                overwrite: true,
-                rotateX: 0,
-                rotateY: 0,
-              });
-            }
-          });
+        .querySelectorAll<HTMLDivElement>(".cube")
+        .forEach((cube) => {
+          const r = +cube.dataset.row!;
+          const c = +cube.dataset.col!;
+          const dist = Math.hypot(r - rowCenter, c - colCenter);
+          if (dist <= radius) {
+            const pct = 1 - dist / radius;
+            const angle = pct * maxAngle;
+            gsap.to(cube, {
+              duration: enterDur,
+              ease: easing,
+              overwrite: true,
+              rotateX: -angle,
+              rotateY: angle,
+            });
+          } else {
+            gsap.to(cube, {
+              duration: leaveDur,
+              ease: "power3.out",
+              overwrite: true,
+              rotateX: 0,
+              rotateY: 0,
+            });
+          }
+        });
     },
     [radius, maxAngle, enterDur, leaveDur, easing]
   );
 
   const onPointerMove = useCallback(
-    (e) => {
+    (e: PointerEvent) => {
       userActiveRef.current = true;
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
 
-      const rect = sceneRef.current.getBoundingClientRect();
+      const rect = sceneRef.current!.getBoundingClientRect();
       const cellW = rect.width / gridSize;
       const cellH = rect.height / gridSize;
       const colCenter = (e.clientX - rect.left) / cellW;
@@ -99,7 +125,7 @@ const Cubes = ({
 
   const resetAll = useCallback(() => {
     if (!sceneRef.current) return;
-    sceneRef.current.querySelectorAll(".cube").forEach((cube) =>
+    sceneRef.current.querySelectorAll<HTMLDivElement>(".cube").forEach((cube) =>
       gsap.to(cube, {
         duration: leaveDur,
         rotateX: 0,
@@ -110,12 +136,12 @@ const Cubes = ({
   }, [leaveDur]);
 
   const onTouchMove = useCallback(
-    (e) => {
-      e.preventDefault();
+    (e: TouchEvent) => {
+      e.preventDefault(); 
       userActiveRef.current = true;
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
 
-      const rect = sceneRef.current.getBoundingClientRect();
+      const rect = sceneRef.current!.getBoundingClientRect();
       const cellW = rect.width / gridSize;
       const cellH = rect.height / gridSize;
       
@@ -145,14 +171,17 @@ const Cubes = ({
   }, [resetAll]);
 
   const onClick = useCallback(
-    (e) => {
+    (e: MouseEvent | TouchEvent) => {
       if (!rippleOnClick || !sceneRef.current) return;
       const rect = sceneRef.current.getBoundingClientRect();
       const cellW = rect.width / gridSize;
       const cellH = rect.height / gridSize;
       
-      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-      const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+      // 터치와 마우스 모두 지원
+      const clientX = (e as MouseEvent).clientX || 
+                     ((e as TouchEvent).touches && (e as TouchEvent).touches[0].clientX);
+      const clientY = (e as MouseEvent).clientY || 
+                     ((e as TouchEvent).touches && (e as TouchEvent).touches[0].clientY);
       
       const colHit = Math.floor((clientX - rect.left) / cellW);
       const rowHit = Math.floor((clientY - rect.top) / cellH);
@@ -165,17 +194,17 @@ const Cubes = ({
       const animDuration = baseAnimDur / rippleSpeed;
       const holdTime = baseHold / rippleSpeed;
 
-      const rings = {};
+      const rings: Record<number, HTMLDivElement[]> = {};
       sceneRef.current
-        .querySelectorAll(".cube")
-          .forEach((cube) => {
-            const r = +cube.dataset.row;
-            const c = +cube.dataset.col;
-            const dist = Math.hypot(r - rowHit, c - colHit);
-            const ring = Math.round(dist);
-            if (!rings[ring]) rings[ring] = [];
-            rings[ring].push(cube);
-          });
+        .querySelectorAll<HTMLDivElement>(".cube")
+        .forEach((cube) => {
+          const r = +cube.dataset.row!;
+          const c = +cube.dataset.col!;
+          const dist = Math.hypot(r - rowHit, c - colHit);
+          const ring = Math.round(dist);
+          if (!rings[ring]) rings[ring] = [];
+          rings[ring].push(cube);
+        });
 
       Object.keys(rings)
         .map(Number)
@@ -183,7 +212,7 @@ const Cubes = ({
         .forEach((ring) => {
           const delay = ring * spreadDelay;
           const faces = rings[ring].flatMap((cube) =>
-            Array.from(cube.querySelectorAll(".cube-face"))
+            Array.from(cube.querySelectorAll<HTMLElement>(".cube-face"))
           );
 
           gsap.to(faces, {
@@ -239,7 +268,6 @@ const Cubes = ({
   useEffect(() => {
     const el = sceneRef.current;
     if (!el) return;
-    
     el.addEventListener("pointermove", onPointerMove);
     el.addEventListener("pointerleave", resetAll);
     el.addEventListener("click", onClick);
@@ -263,7 +291,7 @@ const Cubes = ({
   }, [onPointerMove, resetAll, onClick, onTouchMove, onTouchStart, onTouchEnd]);
 
   const cells = Array.from({ length: gridSize });
-  const sceneStyle = {
+  const sceneStyle: React.CSSProperties = {
     gridTemplateColumns: cubeSize
       ? `repeat(${gridSize}, ${cubeSize}px)`
       : `repeat(${gridSize}, 1fr)`,
@@ -282,11 +310,11 @@ const Cubes = ({
       shadow === true ? "0 0 6px rgba(0,0,0,.5)" : shadow || "none",
     ...(cubeSize
       ? {
-        width: `${gridSize * cubeSize}px`,
-        height: `${gridSize * cubeSize}px`,
-      }
+          width: `${gridSize * cubeSize}px`,
+          height: `${gridSize * cubeSize}px`,
+        }
       : {}),
-  };
+  } as React.CSSProperties;
 
   return (
     <div

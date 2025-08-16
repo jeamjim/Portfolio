@@ -20,6 +20,7 @@ import ClickSpark from './components/ClickSpark';
 import ScrollVelocity from './components/ScrollVelocity';
 import FlowingMenu from './components/FlowingMenu'
 import ScrollFloat from './components/ScrollFloat';
+import TextPressure from './components/TextPressure';
 
 
 // FONTS
@@ -92,7 +93,7 @@ export default function Home() {
       duration={400}
     >
 
-    <div className="font-sans bg-gradient-to-b from-gray-900 to-black text-white">
+    {/* <div className="font-sans bg-gradient-to-b from-gray-900 to-black text-white"> */}
     
     {/* <div style={{ width: '100%', height: '600px', position: 'relative' }}>
       <LightRays
@@ -125,53 +126,77 @@ export default function Home() {
         </div> */}
 
 
-      <section className="min-h-screen flex flex-col md:flex-row items-center justify-start px-6 gap-12 text-center md:text-left relative">
-        <div className="max-w-8x3">
-          <ScrambledText
-            className="scrambled-text-demo overflow-visible"
-            radius={100}
-            duration={1.2}
-            speed={0.5}> 
-            <h1
-              className={`${righteous.className} text-3x2 sm:text-6xl tracking-wide text-white`}
-              data-aos="fade-up"
-              data-aos-delay="200">
-              Invest in the future through advanced Web Designing
-            </h1>
-          </ScrambledText>
+      {/* <div className="min-h-screen w-full bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]"> */}
+      <div className="min-h-screen w-full font-sans bg-gradient-to-b from-gray-900 to-black flex justify-center items-center px-[10px] py-[10px]">
 
-          {/* Bio */}
-          <p
-            className={`${roboto.className} mt-0 text-gray-400 leading-relaxed text-2x3`}
-            data-aos="fade-up"
-            data-aos-delay="400">
-            THE FUTURE IS HERE!
-          </p>
-        </div>
+        {/* Bento container */}
+        <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[10px] mb-[10px]">
+          
+          <section className="flex flex-col md:flex-row items-center justify-start gap-12 text-center md:text-left relative w-full h-full">
+            <div className="max-w-8xl -mt-30">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="400"
+                style={{ position: "relative", height: "480px" }}
+              >
+                <TextPressure
+                  text="Hello!"
+                  flex={true}
+                  alpha={false}
+                  stroke={false}
+                  width={true}
+                  weight={true}
+                  italic={true}
+                  textColor="#ffffff"
+                  strokeColor="#ff0000"
+                  minFontSize={500}
+                />
+              </div>
 
-        <div
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2"
-          data-aos="zoom-in"
-          data-aos-delay="400"
-        >
-          <CircularText text="Scroll Down• " />
-          {/* <ShinyText text="Scroll Down" /> */}
-        </div>
-      </section>
+              {/* Bio */}
+              <p
+                className={`${roboto.className} mt-2 text-gray-400 leading-tight text-xl`}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                THE FUTURE IS HERE!
+              </p>
+            </div>
 
-
-
-      <div className="flex justify-center items-center w-full my-15">
-        <div className="w-full max-w-8xl h-20  rounded-lg backdrop-blur-md flex items-center">
-          <ScrollVelocity
-            texts={['FrontEnd Dev', 'UI designer']}
-            velocity={80}
-            className="text-3xl sm:text-5xl font-extrabold text-white"
-          />
+            {/* Scroll Down Indicator */}
+            <div
+              className="absolute bottom-1 left-1/2 transform -translate-x-1/2"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <CircularText text="Scroll Down• " />
+            </div>
+          </section>
         </div>
       </div>
 
 
+
+
+
+
+          <ScrambledText
+            className="scrambled-text-demo overflow-visible"
+            radius={100}
+            duration={1.2}
+            speed={0.10}> 
+            <div className="flex justify-center items-center w-full my-15">
+              <div className="w-full max-w-8xl h-20  rounded-lg backdrop-blur-md flex items-center">
+                <ScrollVelocity
+                  texts={['Welcome!', '']}
+                  velocity={80}
+                  className="text-6xl sm:text-6xl font-extrabold text-white font-serif"
+                />
+              </div>
+            </div>
+          </ScrambledText>
+
+      
 
 
 
@@ -234,12 +259,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto py-24 px-6 text-center">
         <ScrollFloat
           animationDuration={1}
-          ease='back.inOut(2)'
+          ease='back.inOut(-10)'
           scrollStart='center bottom+=80%'
           scrollEnd='bottom bottom-=40%'
-          stagger={0.03}
-          
-        >
+          stagger={0.03}>
             Projects
         </ScrollFloat>
         
@@ -309,7 +332,7 @@ export default function Home() {
       <footer className="text-center text-gray-500 py-6 border-t border-white/10">
         © {new Date().getFullYear()} James P, Lim. All rights reserved.
       </footer>
-    </div>
+    {/* </div> */}
 </ClickSpark>
 
   );
