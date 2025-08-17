@@ -77,6 +77,31 @@ const items = [
       url: "https://example.com/three",
       height: 600,
     },
+    {
+      id: "4",
+      img: "https://picsum.photos/id/1020/600/800?grayscale",
+      url: "https://example.com/three",
+      height: 300,
+    },
+    {
+      id: "5",
+      img: "https://picsum.photos/id/1020/600/800?grayscale",
+      url: "https://example.com/three",
+      height: 400,
+    },
+    {
+      id: "6",
+      img: "https://picsum.photos/id/1011/600/750?grayscale",
+      url: "https://example.com/two",
+      height: 420,
+    },
+
+      {
+      id: "7",
+      img: "https://picsum.photos/id/1011/600/750?grayscale",
+      url: "https://example.com/two",
+      height: 620,
+    },
 
 ];
 
@@ -95,8 +120,8 @@ const demoItems = [
     text: 'Github', 
     image: 'https://picsum.photos/600/400?random=3' },
 
-  { link: '#', 
-    text: 'Telegram', 
+  { link: 'https://mail.google.com/mail/u/0/#inbox', 
+    text: 'Email', 
     image: 'https://picsum.photos/600/400?random=4' }
 ];
 
@@ -212,9 +237,9 @@ export default function Home() {
             duration={1.2}
             speed={0.10}> 
             <div className="flex justify-center items-center w-full my-15">
-              <div className="w-full max-w-8xl h-20  rounded-lg backdrop-blur-md flex items-center">
+              <div className="w-full max-w-8xl h-20  rounded-lg  flex items-center">
                 <ScrollVelocity
-                  texts={['Welcome!  ', '']}
+                  texts={[' Welcome!  ', 'Niggas']}
                   velocity={80}
                   className={`${bebas.className} text-6xl sm:text-6xl font-extrabold text-white `}
                 />
@@ -282,17 +307,18 @@ export default function Home() {
 
 
       {/* Projects Section */}
-      <section className="max-w-7xl mx-auto py-24 px-6 text-center ">
+      <section className="w-screen min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <ScrollFloat
           animationDuration={1}
-          ease='back.inOut(-10)'
-          scrollStart='center bottom+=80%'
-          scrollEnd='bottom bottom-=40%'
-          stagger={0.03}>
-            Projects
+          ease="back.inOut(-10)"
+          scrollStart="center bottom+=80%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+        >
+          Projects
         </ScrollFloat>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {[1, 2, 3].map((project) => (
             <div
               key={project}
@@ -306,8 +332,21 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
+
+        <Masonry
+          items={items}
+          ease="power3.out"
+          duration={0.6}
+          stagger={0.05}
+          animateFrom="bottom"
+          scaleOnHover={true}
+          hoverScale={0.95}
+          blurToFocus={true}
+          colorShiftOnHover={false}
+        />
       </section>
+
 
 
 
@@ -318,7 +357,7 @@ export default function Home() {
 
       {/* Contact Section */}
        <section
-        className="max-w-3xl mx-auto py-20 px-6 text-center"
+        className="max-w-3xl mx-auto py-20 px-6 text-center mt-40"
         data-aos="zoom-in-up"
         data-aos-delay="450"
       >

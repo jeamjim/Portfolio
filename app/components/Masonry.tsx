@@ -12,22 +12,31 @@ const useMedia = (
   values: number[],
   defaultValue: number
 ): number => {
-  const get = () =>
-    values[queries.findIndex((q) => matchMedia(q).matches)] ?? defaultValue;
-
+  // Ensure matchMedia is available (avoid SSR crash)
+  const get = () => {
+    if (typeof window === "undefined" || !window.matchMedia) {
+      return defaultValue;
+    }
+    const index = queries.findIndex((q) => window.matchMedia(q).matches);
+    return typeof values[index] !== "undefined" ? values[index] : defaultValue;
+  };
   const [value, setValue] = useState<number>(get);
-
   useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
     const handler = () => setValue(get);
-    queries.forEach((q) => matchMedia(q).addEventListener("change", handler));
+    const mediaQueryLists = queries.map((q) => window.matchMedia(q));
+    mediaQueryLists.forEach((mql) => mql.addEventListener("change", handler));
+
     return () =>
-      queries.forEach((q) =>
-        matchMedia(q).removeEventListener("change", handler)
+      mediaQueryLists.forEach((mql) =>
+        mql.removeEventListener("change", handler)
       );
-  }, [queries]);
+  }, [queries, values, defaultValue]);
 
   return value;
 };
+
+
 
 const useMeasure = <T extends HTMLElement>() => {
   const ref = useRef<T | null>(null);
