@@ -22,6 +22,7 @@ import FlowingMenu from './components/FlowingMenu'
 import ScrollFloat from './components/ScrollFloat';
 import TextPressure from './components/TextPressure';
 import Masonry from './components/Masonry';
+import ScrollReveal from './components/ScrollReveal';
 
 
 // FONTS
@@ -54,55 +55,56 @@ const playfair = Playfair_Display({ weight: ["400", "700"], subsets: ["latin"] }
 const pacifico = Pacifico({ weight: ["400"], subsets: ["latin"] });
 const greatVibes = Great_Vibes({ weight: ["400",], subsets: ["latin"] });
 const dancing_Script = Dancing_Script({ weight: ["400", "700"], subsets: ["latin"] });
-
+{/* <ScrollReveal
+  baseOpacity={0}
+  enableBlur={true}
+  baseRotation={5}
+  blurStrength={10}
+>
+  When does a man die? When he is hit by a bullet? No! When he suffers a disease?
+  No! When he ate a soup made out of a poisonous mushroom?
+  No! A man dies when he is forgotten!
+</ScrollReveal> */}
 
 
 //masonry
 const items = [
     {
       id: "1",
-      img: "https://picsum.photos/id/1015/600/900?grayscale",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-1/457737506_2150280865371996_4679146964722032431_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHxs_Jt0CBacFktKp9nhxXuxlcznDmzYHPGVzOcObNgc-JyXSoDxrOkzD7m96CWgEDW5o9CttcQ3SdrwZnBpf6C&_nc_ohc=_jaXRUGSX9sQ7kNvwF8NntX&_nc_oc=Adn520MOEYBjvm-wXANek-rFNE_JVxSNBiB5zmTfcdabB-ubwK2PWH3XA7mB_QDkW4E&_nc_zt=24&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=Fp7hXFuFAJ3XoZyksxO51w&oh=00_AfWUmDIvBZ3SjGI7nUvOfxIhw02vimnSPYc0X-hl6BWujg&oe=68A70868",
       url: "https://example.com/one",
       height: 400,
     },
     {
       id: "2",
-      img: "https://picsum.photos/id/1011/600/750?grayscale",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/480915820_1333459777967303_2979987100198876684_n.jpg?stp=cp6_dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGNgWuLlU_ORjU8EduOoLbeempgGZt4Dtl6amAZm3gO2RDxn9Ak3MoxhtRCekFIQdshW2SyztxB0OLFqI5T-rfx&_nc_ohc=K7bzeDInkSsQ7kNvwEjPLHz&_nc_oc=Adn87jujd1JAgciA3Tuj62ZRPU48Uviw-VdI8gXPGNocwuflFliQCsB7YLA1KLLetqo&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=LdRIlH2inDR5kwqzP4WOMg&oh=00_AfUKJokaQjrzVFc-JboSX3cLKGnNAWx7Se2AfxbkMrlHGg&oe=68A71062",
       url: "https://example.com/two",
       height: 250,
     },
     {
       id: "3",
-      img: "https://picsum.photos/id/1020/600/800?grayscale",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/127925925_390811888898768_5306747639628916202_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFfvVtZbLBy-eQ8Iy8pkgFB5n8kPUafJGzmfyQ9Rp8kbHpPvkTDp_PAIBpU-BumsCvh4DpjSvp0q9UpgRlGG4QV&_nc_ohc=J3axZ5PpqNEQ7kNvwGK8hQa&_nc_oc=AdlbVmraIo_ChEujcyoLkPmnASLPbMoGuV0sNcydJk-B7npp3CgsxW4ZiyFZupbZcqU&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=K_6aVLXCmpbsp-Ukz-uXMw&oh=00_AfVKXI8mDw7FT-SdP_knJ9D_1gYC4G_LNd49zASAMKXIbg&oe=68C8AEDE",
       url: "https://example.com/three",
       height: 600,
     },
     {
       id: "4",
-      img: "https://picsum.photos/id/1020/600/800?grayscale",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/178907031_480695853243704_4380366982325189988_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFT7YPEhQ-xTkIHQKF_cob-h5pJZ5z2aJaHmklnnPZolum_l-c7UXDYbCTmz1w02zoSo5OVl4ROh8ULfL_j72su&_nc_ohc=UcoTZCx7CgEQ7kNvwFPl6ZJ&_nc_oc=AdkkI70i8xhr0xdYn-78dey9ddCixRglt5NnR__-tHdiDwAIG7rW2rWziF0RSap_G9Q&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=gLdK4NeUmSyCfB70cHdFEg&oh=00_AfUOUwhufLA78Z-q9QkZbZCbBcwEu0YWLDIwveZkNgp2zQ&oe=68C88FAF",
       url: "https://example.com/three",
       height: 300,
     },
     {
       id: "5",
-      img: "https://picsum.photos/id/1020/600/800?grayscale",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/179843571_480696066577016_8773821593027985396_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOPN52wwVJYXlVw6pE17pKiksUohmIb_SKSxSiGYhv9CyxQU487Cuc3jaB_CrsN1xj9WYu4JT2zI2ZBd-u6ZNQ&_nc_ohc=2Qzwioxpr3IQ7kNvwFte6ZL&_nc_oc=AdnmvBfw0MMBY7uS3B43Cxp85HDun6yAxlhOxG-iq5Rm1z7VPV0YbF-q8vZzk_fHdv4&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=Q4691D7PWLEpBucJfuewkQ&oh=00_AfViCWLfrj9IQUToudhM5tCt1oHTJh4oMEkRIinbZx4Kog&oe=68C8A830",
       url: "https://example.com/three",
       height: 400,
     },
     {
       id: "6",
-      img: "https://picsum.photos/id/1011/600/750?grayscale",
-      url: "https://example.com/two",
-      height: 420,
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/505043008_2401334943599919_5310625316680681331_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHzzsvh06rX2Z5BR-h8x4oj5q8spRNXOxPmryylE1c7E1SoROrv6OqiW_O6WtXoXQgH65imtV0Nbi86vgJ6n-Xp&_nc_ohc=iekN3FPauKQQ7kNvwHqn9e0&_nc_oc=Adl8Cncz-HQeev8FdCwKj0CgijtUwo9tLhQCFqnU8kBCCnv0UlkBSSXD9wagpdzp5uc&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=RXYIpdvLu8B7QfPw2JV2VA&oh=00_AfWRW3-cNgkrFN08Ywy78awDqNeDIYvOFjolKZ1bBoBU5w&oe=68A745B2",
+      url: "https://example.com/three",
+      height: 600,
     },
-
-      {
-      id: "7",
-      img: "https://picsum.photos/id/1011/600/750?grayscale",
-      url: "https://example.com/two",
-      height: 620,
-    },
-
 ];
 
 
