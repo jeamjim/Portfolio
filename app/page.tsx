@@ -147,41 +147,7 @@ export default function Home() {
       duration={400}
     >
 
-    {/* <div className="font-sans bg-gradient-to-b from-gray-900 to-black text-white"> */}
-    
-    {/* <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-      <LightRays
-        raysOrigin="top-center"
-        raysColor="#ffffff"
-        raysSpeed={1.5}
-        lightSpread={0.8}
-        rayLength={1.2}
-        followMouse={true}
-        mouseInfluence={0.1}
-        noiseAmount={0.1}
-        distortion={0.05}
-        className="custom-rays"
-      />
-    </div> */}
-
-    {/* <div style={{ height: '90px', position: 'relative' }}>
-          <Cubes 
-            gridSize={5}
-            cubeSize={50}
-            maxAngle={70}
-            radius={4}
-            borderStyle="2px dashed #5227FF"
-            faceColor="#1a1a2e"
-            rippleColor="#ff6b6b"
-            rippleSpeed={1.5}
-            autoAnimate={true}
-            rippleOnClick={true}
-          />
-        </div> */}
-
-
       <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]">
-
         {/* Bento container */}
         <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[10px] mb-[10px]">
           
@@ -230,9 +196,6 @@ export default function Home() {
 
 
 
-
-
-
           <ScrambledText
             className="scrambled-text-demo overflow-visible  mt-25"
             radius={100}
@@ -241,9 +204,9 @@ export default function Home() {
             <div className="flex justify-center items-center w-full my-15">
               <div className="w-full max-w-8xl h-20  rounded-lg  flex items-center">
                 <ScrollVelocity
-                  texts={[' Welcome!  ', 'Niggas']}
-                  velocity={80}
-                  className={`${bebas.className} text-6xl sm:text-6xl font-extrabold text-white `}
+                  texts={[' Welcome! ', 'Niggas']}
+                  velocity={40}
+                  className={`${bebas.className} text-6xl md:text-6xl font-extrabold text-white`}
                 />
               </div>
             </div>
@@ -251,12 +214,9 @@ export default function Home() {
 
       
 
-
-
-
       {/* About Section */}
       <section
-        className="max-w-7xl mx-auto py-24 px-6 flex flex-col md:flex-row items-center gap-10"
+        className="max-w-7xl mx-auto py-1 px-6 flex flex-col md:flex-row items-center gap-10"
         data-aos-delay="350"
         data-aos="zoom-in-up"
       >
@@ -305,11 +265,8 @@ export default function Home() {
 
 
 
-
-
-
       {/* Projects Section */}
-      <section className="w-screen min-h-screen flex flex-col items-center justify-center px-6 text-center">
+      <section className="w-full min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <ScrollFloat
           animationDuration={1}
           ease="back.inOut(-10)"
