@@ -147,11 +147,11 @@ export default function Home() {
       duration={400}
     >
 
-      <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]">
+      <div className="min-h-full w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]">
         {/* Bento container */}
-        <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[10px] mb-[10px]">
+        <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[30px] mb-[10px]">
           
-          <section className="flex flex-col md:flex-row items-center justify-start gap-12 text-center md:text-left relative w-full h-full">
+          <section className="flex flex-col md:flex-row items-center justify-start gap-5 text-center md:text-left relative w-full h-full">
             <div className="max-w-8xl -mt-30">
               <div
                 data-aos="fade-up"
@@ -195,22 +195,24 @@ export default function Home() {
       </div>
 
 
-
-          <ScrambledText
-            className="scrambled-text-demo overflow-visible  mt-25"
+      <ScrambledText
+            className="scrambled-text-demo"
             radius={100}
             duration={1.2}
-            speed={0.10}> 
-            <div className="flex justify-center items-center w-full my-15">
-              <div className="w-full max-w-8xl h-20  rounded-lg  flex items-center">
+            speed={0.10}
+          > 
+            <div className="flex justify-center items-center w-full px-[10px] mb-[100px]">
+              <div className="w-full max-w-full h-20 bg-white rounded-lg flex items-center overflow-hidden">
                 <ScrollVelocity
-                  texts={[' Welcome! ', 'Niggas']}
+                  texts={[' Welcome! ']}
                   velocity={40}
-                  className={`${bebas.className} text-6xl md:text-6xl font-extrabold text-white`}
+                  className={`${bebas.className} text-6xl md:text-6xl font-extrabold text-black whitespace-nowrap`}
                 />
               </div>
             </div>
           </ScrambledText>
+          
+
 
       
 
@@ -266,7 +268,7 @@ export default function Home() {
 
 
       {/* Projects Section */}
-      <section className="w-full min-h-screen flex flex-col items-center justify-center px-6 text-center">
+      <section className="w-full mt-[100px] flex flex-col items-center justify-center px-6 text-center">
         <ScrollFloat
           animationDuration={1}
           ease="back.inOut(-10)"
@@ -316,7 +318,7 @@ export default function Home() {
 
       {/* Contact Section */}
        <section
-        className="max-w-3xl mx-auto py-20 px-6 text-center mt-40"
+        className="max-w-3xl mx-auto px-6 text-center mt-130 py-10"
         data-aos="zoom-in-up"
         data-aos-delay="450"
       >
