@@ -5,6 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { animate } from 'animejs';
+import MagicBento from './components/MagicBento'
+
 
 
 //BACKGROUNDS
@@ -71,15 +73,15 @@ const dancing_Script = Dancing_Script({ weight: ["400", "700"], subsets: ["latin
 const items = [
     {
       id: "1",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-1/457737506_2150280865371996_4679146964722032431_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHxs_Jt0CBacFktKp9nhxXuxlcznDmzYHPGVzOcObNgc-JyXSoDxrOkzD7m96CWgEDW5o9CttcQ3SdrwZnBpf6C&_nc_ohc=_jaXRUGSX9sQ7kNvwF8NntX&_nc_oc=Adn520MOEYBjvm-wXANek-rFNE_JVxSNBiB5zmTfcdabB-ubwK2PWH3XA7mB_QDkW4E&_nc_zt=24&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=Fp7hXFuFAJ3XoZyksxO51w&oh=00_AfWUmDIvBZ3SjGI7nUvOfxIhw02vimnSPYc0X-hl6BWujg&oe=68A70868",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
       url: "https://example.com/one",
       height: 400,
     },
     {
       id: "2",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/480915820_1333459777967303_2979987100198876684_n.jpg?stp=cp6_dst-jpg_s960x960_tt6&_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGNgWuLlU_ORjU8EduOoLbeempgGZt4Dtl6amAZm3gO2RDxn9Ak3MoxhtRCekFIQdshW2SyztxB0OLFqI5T-rfx&_nc_ohc=K7bzeDInkSsQ7kNvwEjPLHz&_nc_oc=Adn87jujd1JAgciA3Tuj62ZRPU48Uviw-VdI8gXPGNocwuflFliQCsB7YLA1KLLetqo&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=LdRIlH2inDR5kwqzP4WOMg&oh=00_AfUKJokaQjrzVFc-JboSX3cLKGnNAWx7Se2AfxbkMrlHGg&oe=68A71062",
+      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
       url: "https://example.com/two",
-      height: 250,
+      height: 750,
     },
     {
       id: "3",
@@ -112,19 +114,23 @@ const items = [
 const demoItems = [
   { link: 'https://www.facebook.com/share/14GPy5T84Ks/', 
     text: 'FaceBook', 
-    image: 'https://picsum.photos/600/400?random=1' },
+    image: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/457737506_2150280865371996_4679146964722032431_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHxs_Jt0CBacFktKp9nhxXuxlcznDmzYHPGVzOcObNgc-JyXSoDxrOkzD7m96CWgEDW5o9CttcQ3SdrwZnBpf6C&_nc_ohc=J5L5DuiI6I4Q7kNvwEdbSRK&_nc_oc=Adn92wpkv22G3_cvdOY3QDQABCq1tOtJW6vJZ4s92e0hD5aGK-iD_YxMBXoDAhVgok8&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=-OmXk_lzwf3bmHSLNnu4wg&oh=00_AfU3CbCLTmbQT5LGO0FKBv4EG78N3kD0tV7HkuiuUyjdWw&oe=68B6A2E6",
+  },
 
   { link: 'https://www.instagram.com/po_chiso?igsh=MXJmZjZkOGtpemc1Yw==', 
     text: 'Instagram', 
-    image: 'https://picsum.photos/600/400?random=2' },
+    image: 'https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/127925925_390811888898768_5306747639628916202_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFfvVtZbLBy-eQ8Iy8pkgFB5n8kPUafJGzmfyQ9Rp8kbHpPvkTDp_PAIBpU-BumsCvh4DpjSvp0q9UpgRlGG4QV&_nc_ohc=J3axZ5PpqNEQ7kNvwGK8hQa&_nc_oc=AdlbVmraIo_ChEujcyoLkPmnASLPbMoGuV0sNcydJk-B7npp3CgsxW4ZiyFZupbZcqU&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=K_6aVLXCmpbsp-Ukz-uXMw&oh=00_AfVKXI8mDw7FT-SdP_knJ9D_1gYC4G_LNd49zASAMKXIbg&oe=68C8AEDE'
+  },
 
   { link: 'https://github.com/jeamjim', 
     text: 'Github', 
-    image: 'https://picsum.photos/600/400?random=3' },
+    image:"https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
+  },
 
   { link: 'https://mail.google.com/mail/u/0/#inbox', 
     text: 'Email', 
-    image: 'https://picsum.photos/600/400?random=4' }
+    image:"https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
+  }
 ];
 
 
@@ -212,13 +218,11 @@ export default function Home() {
             </div>
           </ScrambledText>
           
-
-
       
 
       {/* About Section */}
       <section
-        className="max-w-7xl mx-auto py-1 px-6 flex flex-col md:flex-row items-center gap-10"
+        className="max-w-full mx-auto py-1 px-6 flex flex-col md:flex-row items-center gap-10"
         data-aos-delay="350"
         data-aos="zoom-in-up"
       >
@@ -295,7 +299,7 @@ export default function Home() {
           ))}
         </div> */}
 
-        <Masonry
+        {/* <Masonry
           items={items}
           ease="power3.out"
           duration={0.6}
@@ -305,6 +309,19 @@ export default function Home() {
           hoverScale={0.95}
           blurToFocus={true}
           colorShiftOnHover={false}
+        /> */}
+
+        <MagicBento 
+          textAutoHide={true}
+          enableStars={true}
+          enableSpotlight={true}
+          enableBorderGlow={true}
+          enableTilt={true}
+          enableMagnetism={true}
+          clickEffect={true}
+          spotlightRadius={300}
+          particleCount={12}
+          glowColor="132, 0, 255"
         />
       </section>
 
@@ -318,7 +335,7 @@ export default function Home() {
 
       {/* Contact Section */}
        <section
-        className="max-w-3xl mx-auto px-6 text-center mt-130 py-10"
+        className="max-w-full mx-auto px-6 text-center mt-40 py-10"
         data-aos="zoom-in-up"
         data-aos-delay="450"
       >
@@ -345,20 +362,33 @@ export default function Home() {
     </section>
 
 
-
-
-
-
-
-
-
-
-
       {/* Footer */}
       <footer className="text-center text-gray-500 py-6 border-t border-white/10">
         © {new Date().getFullYear()} James P, Lim. All rights reserved.
       </footer>
-    {/* </div> */}
+
+        {/* <footer className="bg-white text-black py-16 px-6">
+          <div className="max-w-6xl mx-auto flex flex-col items-start justify-start space-y-8">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-center">
+              JAMES LIM
+            </h2>
+
+            
+            <div className="flex items-center space-x-8 text-2xl">
+              <a href="mailto:your@email.com" className="hover:opacity-70 transition">
+                📧
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition">
+                📷
+              </a>
+              <a href="#" className="hover:opacity-70 transition">
+                ✖
+              </a>
+            </div>
+          </div>
+        </footer> */}
+
+
 </ClickSpark>
 
   );
