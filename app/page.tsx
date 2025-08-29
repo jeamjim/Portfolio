@@ -207,15 +207,30 @@ export default function Home() {
             duration={1.2}
             speed={0.10}
           > 
-            <div className="flex justify-center items-center w-full px-[10px] mb-[100px]">
-              <div className="w-full max-w-full h-20 bg-white rounded-lg flex items-center overflow-hidden">
+            
+            <section className="relative w-full space-y-6">
+              {/* White strip - slanted left */}
+              <div className="-rotate-3">
                 <ScrollVelocity
-                  texts={[' Welcome! ']}
-                  velocity={40}
-                  className={`${bebas.className} text-6xl md:text-6xl font-extrabold text-black whitespace-nowrap`}
+                  texts={["✦ HIGHLIGHTS"]}
+                  velocity={0} // no auto velocity
+                  className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
+                  parallaxClassName="bg-white py-3"
                 />
               </div>
-            </div>
+
+              {/* Yellow strip - slanted right */}
+              <div className="rotate-0">
+                <ScrollVelocity
+                  texts={["✦ SELECTED WORKS"]}
+                  velocity={0} // no auto velocity
+                  className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
+                  parallaxClassName="bg-yellow-300 py-3"
+                />
+              </div>
+            </section>
+
+           
           </ScrambledText>
           
       

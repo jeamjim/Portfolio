@@ -64,7 +64,7 @@ function useElementWidth<T extends HTMLElement>(ref: React.RefObject<T | null>):
 export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
   scrollContainerRef,
   texts = [],
-  velocity = 100,
+  velocity = 0,
   className = "",
   damping = 100,
   stiffness = 400,
@@ -115,24 +115,18 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
       return mod + min;
     }
 
-    const x = useTransform(baseX, (v) => {
+  const x = useTransform(scrollY, (latest) => {
       if (copyWidth === 0) return "0px";
-      return `${wrap(-copyWidth, 0, v)}px`;
+      // adjust multiplier (e.g., 0.5 for slower, 2 for faster)
+      return `${wrap(-copyWidth, 0, -latest * 0.5)}px`;
     });
 
-    const directionFactor = useRef<number>(1);
-    useAnimationFrame((t, delta) => {
-      let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    // const directionFactor = useRef<number>(1);
+    // useAnimationFrame((t, delta) => {
+    //   let moveBy = velocityFactor.get() * (delta / 1000) * 300; 
+    //   baseX.set(baseX.get() + moveBy);
+    // });
 
-      if (velocityFactor.get() < 0) {
-        directionFactor.current = -1;
-      } else if (velocityFactor.get() > 0) {
-        directionFactor.current = 1;
-      }
-
-      moveBy += directionFactor.current * moveBy * velocityFactor.get();
-      baseX.set(baseX.get() + moveBy);
-    });
 
     const spans = [];
     for (let i = 0; i < numCopies!; i++) {
