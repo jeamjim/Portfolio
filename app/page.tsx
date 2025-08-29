@@ -145,6 +145,8 @@ export default function Home() {
 
   return (
 
+    <>
+
     <ClickSpark
       sparkColor='#fff'
       sparkSize={20}
@@ -155,7 +157,7 @@ export default function Home() {
 
       <div className="min-h-full w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]">
         {/* Bento container */}
-        <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[30px] mb-[10px]">
+        <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[12px] mb-[10px]">
           
           <section className="flex flex-col md:flex-row items-center justify-start gap-5 text-center md:text-left relative w-full h-full">
             <div className="max-w-8xl -mt-30">
@@ -201,6 +203,8 @@ export default function Home() {
       </div>
 
 
+
+
       <ScrambledText
             className="scrambled-text-demo"
             radius={100}
@@ -208,7 +212,8 @@ export default function Home() {
             speed={0.10}
           > 
             
-            <section className="relative w-full space-y-6">
+            {/* <section className="relative w-screen mt-20 mb-30 space-y-6"> */}
+            <section className="relative inset-x-[-20] w-screen mt-20 mb-30 space-y-6">
               {/* White strip - slanted left */}
               <div className="-rotate-3">
                 <ScrollVelocity
@@ -225,12 +230,10 @@ export default function Home() {
                   texts={["✦ SELECTED WORKS"]}
                   velocity={0} // no auto velocity
                   className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
-                  parallaxClassName="bg-yellow-300 py-3"
+                  parallaxClassName="bg-yellow-200 py-3"
                 />
               </div>
             </section>
-
-           
           </ScrambledText>
           
       
@@ -405,6 +408,6 @@ export default function Home() {
 
 
 </ClickSpark>
-
+</>
   );
 }
