@@ -304,7 +304,7 @@ export default function Home() {
             company or business.
           </p>
           <a
-            href="more-about-me"
+            href="/more-about-me"
             className="font-bold uppercase text-white hover:text-orange-500 transition"
           >
             More About Me <span className="hover:text-rotate-20">→</span>
