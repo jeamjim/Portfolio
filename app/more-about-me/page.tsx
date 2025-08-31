@@ -55,8 +55,7 @@ export default function aboutMe() {
             sparkCount={8}
             duration={400}
         >
-          <section className="flex flex-col items-center justify-center text-center w-full py-16 ">
-            
+          <section className="flex flex-col items-center justify-center text-center w-full py-16 bg-gradient-to-b from-gray-900 bg-[#0a0a0a]">
             <a
             href="/"
             className="absolute top-4 left-6 text-white hover:text-orange-500 transition"
