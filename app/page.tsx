@@ -307,7 +307,7 @@ export default function Home() {
             href="more-about-me"
             className="font-bold uppercase text-white hover:text-orange-500 transition"
           >
-            More About Me →
+            More About Me <span className="hover:text-rotate-20">→</span>
           </a>
         </div>
       </section>
