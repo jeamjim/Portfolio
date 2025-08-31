@@ -162,7 +162,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
         <VelocityText
           key={index}
           className={className}
-          baseVelocity={index % 2 !== 0 ? -velocity : velocity}
+          baseVelocity={index % 3 !== 2 ? -velocity : velocity}
           scrollContainerRef={scrollContainerRef}
           damping={damping}
           stiffness={stiffness}

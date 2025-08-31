@@ -1,12 +1,10 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
-import { animate } from 'animejs';
 import MagicBento from './components/MagicBento'
-
 
 
 //BACKGROUNDS
@@ -135,6 +133,47 @@ const demoItems = [
 
 
 export default function Home() {
+
+   const footerRef = useRef<HTMLElement | null>(null);
+  const textRef = useRef<HTMLParagraphElement | null>(null);
+  const lineRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Fade & slide up footer text
+    if (textRef.current) {
+      gsap.fromTo(
+        textRef.current,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.3 }
+      );
+    }
+
+    // Animate glowing line
+    if (lineRef.current) {
+      gsap.fromTo(
+        lineRef.current,
+        { scaleX: 0, opacity: 0 },
+        {
+          scaleX: 1,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          transformOrigin: "center",
+          delay: 0.6,
+        }
+      );
+
+      gsap.to(lineRef.current, {
+        boxShadow: "0 0 20px rgba(168, 85, 247, 0.6)", // purple glow
+        repeat: -1,
+        yoyo: true,
+        duration: 1.8,
+        ease: "sine.inOut",
+      });
+    }
+  }, []);
+
+
   useEffect(() => {
     AOS.init({
       duration: 950,
@@ -142,6 +181,8 @@ export default function Home() {
       easing: "ease-out-cubic",
     });
   }, []);
+
+  
 
   return (
 
@@ -213,12 +254,12 @@ export default function Home() {
           > 
             
             {/* <section className="relative w-screen mt-20 mb-30 space-y-6"> */}
-            <section className="relative inset-x-[-20] w-screen mt-20 mb-30 space-y-6">
+            <section className="relative inset-x-[-20] w-screen mt-20 mb-30 space-y-6">    {/* Fixed the horizontal scrolling */}
               {/* White strip - slanted left */}
               <div className="-rotate-3">
                 <ScrollVelocity
                   texts={["✦ HIGHLIGHTS"]}
-                  velocity={0} // no auto velocity
+                  velocity={5} 
                   className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
                   parallaxClassName="bg-white py-3"
                 />
@@ -228,7 +269,7 @@ export default function Home() {
               <div className="rotate-0">
                 <ScrollVelocity
                   texts={["✦ SELECTED WORKS"]}
-                  velocity={0} // no auto velocity
+                  velocity={-5} 
                   className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
                   parallaxClassName="bg-yellow-200 py-3"
                 />
@@ -240,51 +281,37 @@ export default function Home() {
 
       {/* About Section */}
       <section
-        className="max-w-full mx-auto py-1 px-6 flex flex-col md:flex-row items-center gap-10"
+        className="max-w-7xl mx-auto py-20 px-6 flex flex-col md:flex-row items-start justify-between gap-10"
         data-aos-delay="350"
         data-aos="zoom-in-up"
       >
-        {/* Left: Text */}
-        <div className="flex-1 text-center md:text-left">
-          <h2 className="text-3xl font-semibold mb-6">About Me</h2>
-          <p className="text-lg text-gray-400 leading-relaxed">
-            I’m a passionate web developer who loves creating clean, minimalistic
-            designs with great user experience. I specialize in React, Next.js, and
-            TailwindCSS. Additionally, I am a self taught graphic designer with the usage of various tools 
-            inclduing various mobile and computer software. 
-          </p>
+        <div className="flex-1 text-left">
+          <h1 className="text-4xl md:text-4xl font-extrabold leading-tight">
+            HI! I'M <span className="text-yellow-400">JAMES</span>, <br />
+            I LOVE MAKING THINGS <br />
+            THAT HELP PEOPLE DO <br />
+            THEIR THING.
+          </h1>
         </div>
 
-        {/* Right: Image Card */}
-        <TiltedCard
-          imageSrc= "https://avatars.githubusercontent.com/u/148544294?v=4"
-          altText="ProfilePicture"
-          captionText="You can call me Jimjim"
-          containerHeight="400px"
-          containerWidth="400px"
-          imageHeight="400px"
-          imageWidth="400px"
-          rotateAmplitude={30}
-          scaleOnHover={1.0}
-          showMobileWarning={false}
-          showTooltip={true}
-          displayOverlayContent={true}
-          overlayContent={
-            <div
-              className="absolute top-5 left-50 px-4 py-2 rounded-lg"
-              style={{
-                background: 'rgba(0, 0, 0, 0.35)',
-                backdropFilter: 'blur(3px)',
-                WebkitBackdropFilter: 'blur(3px)',
-                whiteSpace: 'nowrap'
-              }}>
-              <p className="tilted-card-demo-text text-2xl font-bold text-white m-0">
-                James P. Lim
-              </p>
-            </div>
-            }
-        />
+        <div className="flex-1 max-w-xl text-gray-300 space-y-6">
+          <p>
+            I am a beginner web designer and a self taught graphic desiner based in the Philippines.
+            I specialized in interactive, engaging designs.
+          </p>
+          <p>
+            As a fresh graduate I am more than willing to discover things unknown to me and be of purpose to someone's 
+            company or business.
+          </p>
+          <a
+            href="more-about-me"
+            className="font-bold uppercase text-white hover:text-orange-500 transition"
+          >
+            More About Me →
+          </a>
+        </div>
       </section>
+
 
 
 
@@ -300,23 +327,6 @@ export default function Home() {
         >
           Projects
         </ScrollFloat>
-
-        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-          {[1, 2, 3].map((project) => (
-            <div
-              key={project}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:scale-105 transition"
-              data-aos="fade-up"
-              data-aos-delay={project * 100}
-            >
-              <h3 className="font-semibold mb-2">Project {project}</h3>
-              <p className="text-gray-400 text-sm">
-                A brief description of this project goes here.
-              </p>
-            </div>
-          ))}
-        </div> */}
-
         {/* <Masonry
           items={items}
           ease="power3.out"
@@ -345,12 +355,6 @@ export default function Home() {
 
 
 
-
-
-
-
-
-
       {/* Contact Section */}
        <section
         className="max-w-full mx-auto px-6 text-center mt-40 py-10"
@@ -363,16 +367,6 @@ export default function Home() {
       </p>
 
 
-      {/* Email Button */}
-      {/* <a
-        href="mailto:your@email.com"
-        className="inline-block bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
-      >
-        Say Hello
-      </a> */}
-
-
-
       {/* Social Links */}
         <div style={{ height: '350px', position: 'relative' }}>
           <FlowingMenu items={demoItems} />
@@ -380,33 +374,11 @@ export default function Home() {
     </section>
 
 
-      {/* Footer */}
       <footer className="text-center text-gray-500 py-6 border-t border-white/10">
         © {new Date().getFullYear()} James P, Lim. All rights reserved.
       </footer>
 
-        {/* <footer className="bg-white text-black py-16 px-6">
-          <div className="max-w-6xl mx-auto flex flex-col items-start justify-start space-y-8">
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-center">
-              JAMES LIM
-            </h2>
-
-            
-            <div className="flex items-center space-x-8 text-2xl">
-              <a href="mailto:your@email.com" className="hover:opacity-70 transition">
-                📧
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition">
-                📷
-              </a>
-              <a href="#" className="hover:opacity-70 transition">
-                ✖
-              </a>
-            </div>
-          </div>
-        </footer> */}
-
-
+      
 </ClickSpark>
 </>
   );
