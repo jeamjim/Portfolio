@@ -218,7 +218,7 @@ export default function aboutMe() {
                     data-aos="fade-right" 
                     data-aos-delay="400">
                         <h2 className="text-2xl md:text-2xl font-extrabold uppercase mb-4 text-white">
-                            When touching grass
+                            When I dont work
                         </h2>
                         <p className="text-gray-300 mb-4 leading-relaxed text-sm">
                             Since I can remember, I have always been fascinated by art and

@@ -6,6 +6,26 @@ import "aos/dist/aos.css";
 import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import MagicBento from './components/MagicBento'
 
+//images 
+import graphic_1 from "../public/1737957750205.jpeg"
+import graphic_2 from "../public/1737957731776.jpeg"
+import graphic_3 from "../public/New (1).webp"
+import graphic_4 from "../public/New (2).webp"
+import graphic_5 from "../public/New (3).webp"
+import graphic_6 from "../public/New (4).webp"
+import graphic_7 from "../public/New (5).webp"
+import graphic_8 from "../public/New (6).webp"
+import graphic_9 from "../public/New (7).webp"
+import graphic_10 from "../public/New (8).webp"
+import graphic_11 from "../public/New (9).webp"
+import graphic_12 from "../public/New.webp"
+
+
+
+
+
+
+
 
 //BACKGROUNDS
 import LightRays from './components/LightRays';
@@ -254,7 +274,7 @@ export default function Home() {
           > 
             
             {/* <section className="relative w-screen mt-20 mb-30 space-y-6"> */}
-            <section className="relative inset-x-[-20] w-screen mt-20 mb-30 space-y-6">    {/* Fixed the horizontal scrolling */}
+            <section className="relative inset-x-[-20] w-screen mt-40 mb-30 space-y-6">    {/* Fixed the horizontal scrolling */}
               {/* White strip - slanted left */}
               <div className="-rotate-3">
                 <ScrollVelocity
@@ -281,34 +301,158 @@ export default function Home() {
 
       {/* About Section */}
       <section
-        className="max-w-7xl mx-auto py-20 px-6 flex flex-col md:flex-row items-start justify-between gap-10"
-        data-aos-delay="350"
-        data-aos="zoom-in-up"
-      >
-        <div className="flex-1 text-left">
-          <h1 className="text-4xl md:text-4xl font-extrabold leading-tight">
-            HI! I'M <span className="text-yellow-400">JAMES</span>, <br />
-            I LOVE MAKING THINGS <br />
-            THAT HELP PEOPLE DO <br />
-            THEIR THING.
-          </h1>
-        </div>
+        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 flex items-end justify-end overflow-hidden">
+        <h1 className="absolute top-0 left-0 text-[10rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
+          ABOUT <br /> ME
+        </h1>
 
-        <div className="flex-1 max-w-xl text-gray-300 space-y-6">
-          <p>
-            I am a beginner web designer and a self taught graphic desiner based in the Philippines.
-            I specialized in interactive, engaging designs.
-          </p>
-          <p>
-            As a fresh graduate I am more than willing to discover things unknown to me and be of purpose to someone's 
-            company or business.
-          </p>
-          <a
-            href="/more-about-me"
-            className="font-bold uppercase text-white hover:text-orange-500 transition"
-          >
-            More About Me <span className="hover:text-rotate-20">→</span>
-          </a>
+        <div className="relative max-w-7xl flex items-start justify-between z-10"
+          data-aos-delay="300"
+          data-aos="fade-up">
+          <div className="w-1/2">
+            <h1 className="text-2xl md:text-1xl font-extrabold leading-none">
+              HI! I'M <span className="text-yellow-400">JAMES</span>, <br />
+              I LOVE MAKING THINGS <br />
+              THAT HELP PEOPLE DO <br />
+              THEIR THING.
+            </h1>
+          </div>
+
+          <div className="w-1/3 flex flex-col gap-2 text-gray-300 text-sm md:text-[-1rem]">
+            <p>
+              I am a beginner web designer and a self taught graphic designer based in
+              the Philippines. I specialize in interactive, engaging designs.
+            </p>
+            <p>
+              As a fresh graduate I am more than willing to discover things unknown to
+              me and be of purpose to someone's company or business.
+            </p>
+            <a href="/more-about-me" className="font-bold uppercase text-white hover:text-orange-500 transition" > More About Me <span className="hover:text-rotate-20">→</span> </a>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* graphics Section */}
+      <section
+        className="relative max-w-full mx-auto min-h-[700px] mt-20 px-6 py-16 flex items-center justify-center overflow-hidden"
+      >
+        <h1 className="absolute top-0 left-0 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
+          Graphics
+        </h1>
+
+        {/* Bento Grid  */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-40 w-full">
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="200"
+          data-aos="fade-up">
+            <Image
+              src={graphic_1}
+              className="w-full h-full object-scale-down"
+              alt="Design 1"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="300"
+          data-aos="fade-up">
+            <Image
+              src={graphic_2}
+              alt="Design 2"
+              className="w-full h-full object-contain"
+            />
+            </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="400"
+          data-aos="fade-up">
+            <Image
+              src={graphic_3}
+              alt="Design 3"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="500"
+          data-aos="fade-up">
+            <Image
+              src={graphic_8}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="600"
+          data-aos="fade-up">
+            <Image
+              src={graphic_5}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="700"
+          data-aos="fade-up">
+            <Image
+              src={graphic_6}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="800"
+          data-aos="fade-up">
+            <Image
+              src={graphic_7}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="900"
+          data-aos="fade-up">
+            <Image
+              src={graphic_9}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="1000"
+          data-aos="fade-up">
+            <Image
+              src={graphic_10}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="1100"
+          data-aos="fade-up">
+            <Image
+              src={graphic_11}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="1200"
+          data-aos="fade-up">
+            <Image
+              src={graphic_12}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
       </section>
 
@@ -316,8 +460,10 @@ export default function Home() {
 
 
 
+
+
       {/* Projects Section */}
-      <section className="w-full mt-[100px] flex flex-col items-center justify-center px-6 text-center">
+      <section className="w-full mt-[250px] flex flex-col items-center justify-center px-6 text-center">
         <ScrollFloat
           animationDuration={1}
           ease="back.inOut(-10)"
