@@ -358,8 +358,8 @@ export default function Home() {
       {/* Contact Section */}
        <section
         className="max-w-full mx-auto px-6 text-center mt-40 py-10"
-        data-aos="zoom-in-up"
-        data-aos-delay="450"
+        data-aos="fade-up"
+        data-aos-delay="350"
       >
       <h2 className="text-2xl font-semibold mb-4">Get In Touch</h2>
       <p className="text-gray-400 mb-6">

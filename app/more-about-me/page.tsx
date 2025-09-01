@@ -3,7 +3,14 @@
 import { useEffect } from "react";
 import AOS from "aos";         //needed for aos effect 
 import "aos/dist/aos.css";    //needed for aos effect as well as a useeffect hook
+
+import Image from "next/image";
 import ClickSpark from '../components/ClickSpark';
+import grass1 from "../../public/grass1.jpg"
+import grass2 from "../../public/grass2.jpg"
+import educ1 from "../../public/educ1 (1).jpg"
+import educ2 from "../../public/educ2.jpg"
+
 
 
 import {
@@ -159,15 +166,16 @@ export default function aboutMe() {
                     <div className="flex-1 flex justify-center"
                     data-aos="fade-left" 
                     data-aos-delay="400">
-                    <img
-                        src="https://tinyurl.com/2yt76uyt"
-                        alt="Old Phone"
+
+                    <Image
                         className="w-35 h-37 object-cover rounded-lg shadow-lg -rotate-6"
+                        src={educ1} 
+                        alt="Grass" 
                     />
-                    <img
-                        src="https://tinyurl.com/2yt76uyt"
-                        alt="Wood Phone"
+                    <Image
                         className="w-35 h-37 object-cover rounded-lg shadow-lg rotate-3 z-10"
+                        src={educ2} 
+                        alt="Grass" 
                     />
                     <img
                         src="https://tinyurl.com/2yt76uyt"
@@ -228,20 +236,20 @@ export default function aboutMe() {
                     <div className="flex-1 flex justify-center"
                     data-aos="fade-left" 
                     data-aos-delay="400">
-                    <img
-                        src="https://tinyurl.com/2yt76uyt"
-                        alt="Old Phone"
-                        className="w-35 h-37 object-cover rounded-lg shadow-lg -rotate-6"
+                    <Image
+                        className="w-35 h-37 object-cover rounded-lg shadow-lg -rotate-6" 
+                        src={grass1} 
+                        alt="Grass" 
                     />
                     <img
                         src="https://tinyurl.com/2yt76uyt"
                         alt="Wood Phone"
                         className="w-35 h-37 object-cover rounded-lg shadow-lg rotate-3 z-10"
                     />
-                    <img
-                        src="https://tinyurl.com/2yt76uyt"
-                        alt="Modern Phone"
+                     <Image
                         className="w-35 h-37 object-cover rounded-lg shadow-lg rotate-6"
+                        src={grass2} 
+                        alt="Grass" 
                     />
                     </div>
 
