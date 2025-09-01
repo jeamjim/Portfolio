@@ -336,7 +336,7 @@ export default function Home() {
 
       {/* graphics Section */}
       <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-20 px-6 py-16 flex items-center justify-center overflow-hidden"
+        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 py-16 flex items-center justify-center overflow-hidden"
       >
         <h1 className="absolute top-0 left-0 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
           Graphics
