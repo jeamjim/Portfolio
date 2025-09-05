@@ -19,12 +19,7 @@ import graphic_9 from "../public/New (7).webp"
 import graphic_10 from "../public/New (8).webp"
 import graphic_11 from "../public/New (9).webp"
 import graphic_12 from "../public/New.webp"
-
-
-
-
-
-
+import graphic_13 from "../public/prophecy.webp"
 
 
 //BACKGROUNDS
@@ -43,7 +38,7 @@ import ScrollFloat from './components/ScrollFloat';
 import TextPressure from './components/TextPressure';
 import Masonry from './components/Masonry';
 import ScrollReveal from './components/ScrollReveal';
-
+import TrueFocus from './components/TrueFocus';
 
 // FONTS
 import {
@@ -216,53 +211,30 @@ export default function Home() {
       duration={400}
     >
 
-      <div className="min-h-full w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px]">
-        {/* Bento container */}
-        <div className="w-full h-[calc(95vh-20px)] rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl p-6 flex flex-col mt-[12px] mb-[10px]">
-          
-          <section className="flex flex-col md:flex-row items-center justify-start gap-5 text-center md:text-left relative w-full h-full">
-            <div className="max-w-8xl -mt-30">
-              <div
-                data-aos="fade-up"
-                data-aos-delay="400"
-                style={{ position: "relative", height: "480px" }}
-              >
-                <TextPressure
-                  text="Hello!"
-                  flex={true}
-                  alpha={false}
-                  stroke={false}
-                  width={true}
-                  weight={true}
-                  italic={true}
-                  textColor="#ffffff"
-                  strokeColor="#ff0000"
-                  minFontSize={500}
-                />
-              </div>
+      <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px] relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundSize: "40px 40px", // grid spacing
+            backgroundImage: `
+              linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
+            maskImage: "radial-gradient(circle at center, rgba(0,0,0,1) -500%, transparent 100%)",
+            WebkitMaskImage: "radial-gradient(circle at center, rgba(0,0,0,1) -500%, transparent 100%)",
+          }}
+        />
 
-              {/* Bio */}
-              <p
-                className={`${roboto.className} mt-2 text-gray-400 leading-tight text-xl`}
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                THE FUTURE OF WEB DESIGN
-              </p>
-            </div>
-
-            {/* Scroll Down Indicator */}
-            <div
-              className="absolute bottom-1 left-1/2 transform -translate-x-1/2"
-              data-aos="zoom-in"
-              data-aos-delay="400"
-            >
-              <CircularText text="Scroll Down• " />
-            </div>
+        {/* Content container */}
+        <div className="w-full h-[calc(95vh-20px)] p-6 flex flex-col mt-[12px] mb-[10px] relative z-10">
+          <section className="flex flex-col md:flex-row items-center justify-center gap-5 text-center md:text-left relative w-full h-full">
+              <TrueFocus 
+                sentence="STUNNING SOLUTIONS FOR CRITICAL PROBLEMS"
+                animationDuration={0.4}
+              />
           </section>
         </div>
       </div>
-
 
 
 
@@ -449,6 +421,16 @@ export default function Home() {
           data-aos="fade-up">
             <Image
               src={graphic_12}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="1300"
+          data-aos="fade-up">
+            <Image
+              src={graphic_13}
               alt="Design 4"
               className="w-full h-full object-contain"
             />

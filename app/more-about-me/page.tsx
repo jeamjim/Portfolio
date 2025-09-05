@@ -221,11 +221,8 @@ export default function aboutMe() {
                             When I dont work
                         </h2>
                         <p className="text-gray-300 mb-4 leading-relaxed text-sm">
-                            Since I can remember, I have always been fascinated by art and
-                            technology. I was deeply interested in sketching, painting, crafts,
-                            and video games. I consider myself fortunate to have closely
-                            witnessed the technological transformation from indestructible
-                            Nokia devices to incredibly powerful modern smartphones.
+                            Every busy man has a life outside his work that matters more than the work. Mine is my family my hobbies 
+                            and a significant other. when off work what I do mostly is do outdoor activities with my love ones.
                         </p>
                         <p className="text-gray-300 leading-relaxed text-sm">
                             During my high school days, I delved into rooting and custom
