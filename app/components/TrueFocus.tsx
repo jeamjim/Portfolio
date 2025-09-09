@@ -1,5 +1,53 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import { Bokor } from "next/font/google"; 
+import colmeak from "next/font/local"; 
+import oughter from "next/font/local"; 
+import qarinthen from "next/font/local"; 
+import dirtylane from "next/font/local"; 
+import midfielder from "next/font/local"; 
+import hourglass from "next/font/local"; 
+
+
+
+
+
+  const bokorFont = Bokor({
+    subsets: ["latin"], 
+    weight: "400",
+  });
+
+  const Hourglass = hourglass({
+    src: "../../public/fonts/Hourglass.otf",
+  });
+
+  const Colmeak = colmeak({
+    src: "../../public/fonts/Colmeak.otf",
+  });
+
+  const Oughter = oughter({
+    src: "../../public/fonts/Oughter.otf",
+  });
+
+  const Qarinthen = qarinthen({
+    src: "../../public/fonts/Qarinthen.otf",
+  });
+
+  const Dirtylane = dirtylane({
+    src: "../../public/fonts/Dirtylane.otf",
+  });
+
+   const Midfielder = midfielder({
+    src: "../../public/fonts/midfielder.otf",
+  });
+
+
+
+
+  
 
 interface TrueFocusProps {
   sentence?: string;
@@ -66,6 +114,15 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
         }[lineSpacing]
       : undefined;
 
+      useEffect(() => {
+          AOS.init({
+            duration: 950,
+            once: true,
+            easing: "ease-out-cubic",
+          });
+        }, []);
+      
+
   return (
     <div
       className={`relative flex flex-wrap justify-center items-center ${lineHeightClass ?? ""}`}
@@ -80,7 +137,9 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             ref={(el) => {
               wordRefs.current[index] = el;
             }}
-            className="relative text-[3rem] font-black cursor-pointer transition-colors duration-300"
+            className={`relative text-[3rem] font-black cursor-pointer transition-colors duration-300 ${Qarinthen.className}`} //edit text from main page
+            data-aos-delay="400"
+            data-aos="fade" 
             style={{
               color: isActive ? "white" : "gray",
             }}

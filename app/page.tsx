@@ -211,7 +211,7 @@ export default function Home() {
       duration={400}
     >
 
-      <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px] relative overflow-hidden">
+      <div className="min-h-screen min-w-full bg-gradient-to-b from-gray-900 bg-[#0a0a0a] flex justify-center items-center px-[10px] py-[10px] relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
