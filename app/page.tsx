@@ -442,11 +442,9 @@ export default function Home() {
 
 
 
-
-
       {/* Projects Section */}
-      <section className="w-full mt-[250px] flex flex-col items-center justify-center px-6 text-center">
-        <ScrollFloat
+      {/* <section className="w-full mt-[250px] flex flex-col items-center justify-center px-6 text-center"> */}
+        {/* <ScrollFloat
           animationDuration={1}
           ease="back.inOut(-10)"
           scrollStart="center bottom+=80%"
@@ -454,7 +452,7 @@ export default function Home() {
           stagger={0.03}
         >
           Projects
-        </ScrollFloat>
+        </ScrollFloat> */}
         {/* <Masonry
           items={items}
           ease="power3.out"
@@ -467,7 +465,7 @@ export default function Home() {
           colorShiftOnHover={false}
         /> */}
 
-        <MagicBento 
+        {/* <MagicBento 
           textAutoHide={true}
           enableStars={true}
           enableSpotlight={true}
@@ -479,7 +477,7 @@ export default function Home() {
           particleCount={12}
           glowColor="132, 0, 255"
         />
-      </section>
+      </section> */}
 
 
 
