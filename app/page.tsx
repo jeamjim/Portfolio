@@ -21,6 +21,10 @@ import graphic_11 from "../public/New (9).webp"
 import graphic_12 from "../public/New.webp"
 import graphic_13 from "../public/prophecy.webp"
 
+import graphic_14 from "../public/jmigs_1.png"
+import graphic_15 from "../public/jmigs_2.png"
+import graphic_16 from "../public/jmigs_3.png"
+
 
 
 //BACKGROUNDS
@@ -436,6 +440,37 @@ export default function Home() {
               className="w-full h-full object-contain"
             />
           </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="600"
+          data-aos="fade-up">
+            <Image
+              src={graphic_14}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="600"
+          data-aos="fade-up">
+            <Image
+              src={graphic_15}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+          data-aos-delay="600"
+          data-aos="fade-up">
+            <Image
+              src={graphic_16}
+              alt="Design 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          
         </div>
       </section>
 
@@ -452,7 +487,7 @@ export default function Home() {
 
           <div
             className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-            data-aos-delay="1300"
+            data-aos-delay="150"
             data-aos="fade-up"
           >
             <video
@@ -468,11 +503,28 @@ export default function Home() {
 
           <div
             className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-            data-aos-delay="1300"
+            data-aos-delay="150"
             data-aos="fade-up"
           >
             <video
               src="/videos/motion_2.mp4"
+              poster="/images/motion_2.jpg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover aspect-[9/16]"
+            />
+          </div>
+
+          <div
+            className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+            data-aos-delay="150"
+            data-aos="fade-up"
+          >
+            <video
+              src="/videos/motion_3.mp4"
               poster="/images/motion_2.jpg"
               autoPlay
               loop
