@@ -22,6 +22,7 @@ import graphic_12 from "../public/New.webp"
 import graphic_13 from "../public/prophecy.webp"
 
 
+
 //BACKGROUNDS
 import LightRays from './components/LightRays';
 
@@ -317,7 +318,7 @@ export default function Home() {
         {/* Bento Grid  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-40 w-full">
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="200"
+          data-aos-delay="50"
           data-aos="fade-up">
             <Image
               src={graphic_1}
@@ -327,7 +328,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="300"
+          data-aos-delay="100"
           data-aos="fade-up">
             <Image
               src={graphic_2}
@@ -337,7 +338,7 @@ export default function Home() {
             </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="400"
+          data-aos-delay="150"
           data-aos="fade-up">
             <Image
               src={graphic_3}
@@ -347,7 +348,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="500"
+          data-aos-delay="200"
           data-aos="fade-up">
             <Image
               src={graphic_8}
@@ -357,7 +358,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="600"
+          data-aos-delay="250"
           data-aos="fade-up">
             <Image
               src={graphic_5}
@@ -367,7 +368,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="700"
+          data-aos-delay="300"
           data-aos="fade-up">
             <Image
               src={graphic_6}
@@ -377,7 +378,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="800"
+          data-aos-delay="350"
           data-aos="fade-up">
             <Image
               src={graphic_7}
@@ -387,7 +388,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="900"
+          data-aos-delay="400"
           data-aos="fade-up">
             <Image
               src={graphic_9}
@@ -397,7 +398,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="1000"
+          data-aos-delay="450"
           data-aos="fade-up">
             <Image
               src={graphic_10}
@@ -407,7 +408,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="1100"
+          data-aos-delay="500"
           data-aos="fade-up">
             <Image
               src={graphic_11}
@@ -417,7 +418,7 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="1200"
+          data-aos-delay="550"
           data-aos="fade-up">
             <Image
               src={graphic_12}
@@ -427,12 +428,58 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="1300"
+          data-aos-delay="600"
           data-aos="fade-up">
             <Image
               src={graphic_13}
               alt="Design 4"
               className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 py-16 flex items-center justify-center overflow-hidden"
+      >
+        <h1 className="absolute top-0 left-0 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
+          Motions
+        </h1>
+
+        {/* Bento Grid  */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-40 w-full">
+          
+
+          <div
+            className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+            data-aos-delay="1300"
+            data-aos="fade-up"
+          >
+            <video
+              className="w-full h-full object-cover aspect-[9/16]"
+              src="/videos/motion_1.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </div>
+
+
+          <div
+            className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
+            data-aos-delay="1300"
+            data-aos="fade-up"
+          >
+            <video
+              src="/videos/motion_2.mp4"
+              poster="/images/motion_2.jpg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover aspect-[9/16]"
             />
           </div>
         </div>
