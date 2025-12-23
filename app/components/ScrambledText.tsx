@@ -1,4 +1,11 @@
-import { useEffect, useRef, PropsWithChildren, CSSProperties } from "react";
+"use client";
+
+import {
+  useEffect,
+  useRef,
+  PropsWithChildren,
+  CSSProperties,
+} from "react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
@@ -28,7 +35,8 @@ const ScrambledText = ({
   useEffect(() => {
     if (!rootRef.current) return;
 
-    const targetElement = rootRef.current.querySelector<HTMLElement>("*");
+    const targetElement =
+      rootRef.current.querySelector<HTMLElement>("*");
     if (!targetElement) return;
 
     const split = SplitText.create(targetElement, {
@@ -38,7 +46,9 @@ const ScrambledText = ({
     });
 
     // Lock width for each character to prevent layout shift
-    split.chars.forEach((c: HTMLElement) => {
+    split.chars.forEach((c) => {
+      if (!(c instanceof HTMLElement)) return;
+
       const w = c.offsetWidth;
       gsap.set(c, {
         attr: { "data-content": c.innerHTML },
@@ -50,7 +60,9 @@ const ScrambledText = ({
     });
 
     const handleMove = (e: PointerEvent) => {
-      split.chars.forEach((c: HTMLElement) => {
+      split.chars.forEach((c) => {
+        if (!(c instanceof HTMLElement)) return;
+
         const { left, top, width, height } = c.getBoundingClientRect();
         const dx = e.clientX - (left + width / 2);
         const dy = e.clientY - (top + height / 2);
