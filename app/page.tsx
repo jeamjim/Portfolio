@@ -39,7 +39,6 @@ import ClickSpark from './components/ClickSpark';
 import ScrollVelocity from './components/ScrollVelocity';
 import FlowingMenu from './components/FlowingMenu'
 import ScrollFloat from './components/ScrollFloat';
-import TextPressure from './components/TextPressure';
 import Masonry from './components/Masonry';
 import ScrollReveal from './components/ScrollReveal';
 import TrueFocus from './components/TrueFocus';
