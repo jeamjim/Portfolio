@@ -295,11 +295,11 @@ export default function Home() {
 
           <div className="w-1/3 flex flex-col gap-2 text-gray-300 text-sm md:text-[-1rem]">
             <p>
-              I am a beginner web designer and a self taught graphic designer based in
+              I am a web designer and a self taught graphic designer based in
               the Philippines. I specialize in interactive, engaging designs.
             </p>
             <p>
-              As a fresh graduate I am more than willing to discover things unknown to
+              As an IT graduate I am more than willing to discover things unknown to
               me and be of purpose to someone's company or business.
             </p>
             <a href="/more-about-me" className="font-bold uppercase text-white hover:text-orange-500 transition" > More About Me <span className="hover:text-rotate-20">→</span> </a>
