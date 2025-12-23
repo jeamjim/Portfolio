@@ -188,7 +188,7 @@ export default function aboutMe() {
                             Education
                         </h2>
                         <p className="text-gray-300 mb-4 leading-relaxed text-sm">
-                            Information technology undergraduate at BUKIDNON STATE UNIVERSITY. Currently into basic
+                            Information technology graduate at BUKIDNON STATE UNIVERSITY. Currently into 
                             web development, web desig and graphic design. I am also proficient in Microsoft technologies 
                             e.g., word, power point and excel. 
                         </p>
