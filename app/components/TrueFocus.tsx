@@ -41,7 +41,7 @@ import hourglass from "next/font/local";
   });
 
    const Midfielder = midfielder({
-    src: "../../public/fonts/midfielder.otf",
+    src: "../../public/fonts/Midfielder.otf",
   });
 
 
