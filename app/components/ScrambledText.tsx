@@ -33,10 +33,10 @@ const ScrambledText = ({
   const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!rootRef.current) return;
+    const root = rootRef.current;
+    if (!root) return;
 
-    const targetElement =
-      rootRef.current.querySelector<HTMLElement>("*");
+    const targetElement = root.querySelector<HTMLElement>("*");
     if (!targetElement) return;
 
     const split = SplitText.create(targetElement, {
@@ -45,35 +45,35 @@ const ScrambledText = ({
       charsClass: "inline-block will-change-transform",
     });
 
-    // Lock width for each character to prevent layout shift
-    split.chars.forEach((c) => {
-      if (!(c instanceof HTMLElement)) return;
+    // ✅ DO NOT TYPE THE PARAMETER
+    split.chars.forEach((char) => {
+      if (!(char instanceof HTMLElement)) return;
 
-      const w = c.offsetWidth;
-      gsap.set(c, {
-        attr: { "data-content": c.innerHTML },
+      const width = char.offsetWidth;
+      gsap.set(char, {
+        attr: { "data-content": char.innerHTML },
         display: "inline-block",
-        width: w,
+        width,
         whiteSpace: "pre",
         overflow: "hidden",
       });
     });
 
     const handleMove = (e: PointerEvent) => {
-      split.chars.forEach((c) => {
-        if (!(c instanceof HTMLElement)) return;
+      split.chars.forEach((char) => {
+        if (!(char instanceof HTMLElement)) return;
 
-        const { left, top, width, height } = c.getBoundingClientRect();
+        const { left, top, width, height } = char.getBoundingClientRect();
         const dx = e.clientX - (left + width / 2);
         const dy = e.clientY - (top + height / 2);
-        const dist = Math.hypot(dx, dy);
+        const distance = Math.hypot(dx, dy);
 
-        if (dist < radius) {
-          gsap.to(c, {
+        if (distance < radius) {
+          gsap.to(char, {
             overwrite: true,
-            duration: duration * (1 - dist / radius),
+            duration: duration * (1 - distance / radius),
             scrambleText: {
-              text: c.dataset.content ?? "",
+              text: char.dataset.content ?? "",
               chars: scrambleChars,
               speed,
             },
@@ -83,11 +83,10 @@ const ScrambledText = ({
       });
     };
 
-    const el = rootRef.current;
-    el.addEventListener("pointermove", handleMove);
+    root.addEventListener("pointermove", handleMove);
 
     return () => {
-      el.removeEventListener("pointermove", handleMove);
+      root.removeEventListener("pointermove", handleMove);
       split.revert();
     };
   }, [radius, duration, speed, scrambleChars]);
