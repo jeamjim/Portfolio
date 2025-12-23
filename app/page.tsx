@@ -32,7 +32,6 @@ import LightRays from './components/LightRays';
 
 // COMPONENTS
 import CircularText from "./components/CircularText";
-import ShinyText from "./components/ShinyText";
 import ScrambledText from './components/ScrambledText';
 import Cubes from './components/Cubes'
 import TiltedCard from './components/TiltedCard';
