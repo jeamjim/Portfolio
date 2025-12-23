@@ -1,9 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, PropsWithChildren, CSSProperties } from "react";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 gsap.registerPlugin(SplitText, ScrambleTextPlugin);
+
+type ScrambledTextProps = {
+  radius?: number;
+  duration?: number;
+  speed?: number;
+  scrambleChars?: string;
+  className?: string;
+  style?: CSSProperties;
+};
 
 const ScrambledText = ({
   radius = 20,
@@ -13,13 +22,13 @@ const ScrambledText = ({
   className = "",
   style = {},
   children,
-}) => {
-  const rootRef = useRef(null);
+}: PropsWithChildren<ScrambledTextProps>) => {
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!rootRef.current) return;
 
-    const targetElement = rootRef.current.querySelector("*");
+    const targetElement = rootRef.current.querySelector<HTMLElement>("*");
     if (!targetElement) return;
 
     const split = SplitText.create(targetElement, {
@@ -28,20 +37,20 @@ const ScrambledText = ({
       charsClass: "inline-block will-change-transform",
     });
 
-    // ✅ Lock width for each character to prevent layout shift
-    split.chars.forEach((c) => {
-      const w = c.offsetWidth; // measure width before animation
+    // Lock width for each character to prevent layout shift
+    split.chars.forEach((c: HTMLElement) => {
+      const w = c.offsetWidth;
       gsap.set(c, {
         attr: { "data-content": c.innerHTML },
         display: "inline-block",
-        width: w, // lock width
-        whiteSpace: "pre", // keep spaces visible
-        overflow: "hidden", // hide overflow
+        width: w,
+        whiteSpace: "pre",
+        overflow: "hidden",
       });
     });
 
-    const handleMove = (e) => {
-      split.chars.forEach((c) => {
+    const handleMove = (e: PointerEvent) => {
+      split.chars.forEach((c: HTMLElement) => {
         const { left, top, width, height } = c.getBoundingClientRect();
         const dx = e.clientX - (left + width / 2);
         const dy = e.clientY - (top + height / 2);
@@ -52,7 +61,7 @@ const ScrambledText = ({
             overwrite: true,
             duration: duration * (1 - dist / radius),
             scrambleText: {
-              text: c.dataset.content || "",
+              text: c.dataset.content ?? "",
               chars: scrambleChars,
               speed,
             },
