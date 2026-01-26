@@ -234,16 +234,23 @@ export default function Home() {
       {/* graphics Section */}
       <section
         className="relative max-w-full mx-auto min-h-[700px] mt-75 px-6 py-16 flex items-center justify-center overflow-hidden">
-        <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
-          Skills & Projects
+        <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[15rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
+          What i do
         </h1>
 
-        <h2 className={`${bebas.className} absolute top-60 left-184 text-[8rem] md:text-[6rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`} >
-            Graphic Design
-        </h2>
+        <ScrollFloat
+          animationDuration={1}
+          ease='back.inOut(2)'
+          scrollStart='center bottom+=50%'
+          scrollEnd='bottom bottom-=40%'
+          stagger={0.03}
+        >
+          Graphics
+        </ScrollFloat>
+
 
         {/* Bento Grid  */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-70 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-160 w-full">
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
           data-aos-delay="50"
           data-aos="fade-up">
@@ -397,17 +404,31 @@ export default function Home() {
         </div>
       </section>
 
+
   {/* Motion Section */}
-      <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 py-16 flex items-center justify-center overflow-hidden">
-        <h2 className={`${bebas.className} absolute top-30 left-184 text-[8rem] md:text-[6rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`} >
+      <section className="relative max-w-full mx-auto min-h-[700px] px-6 py-16 flex items-center justify-center overflow-hidden">
+        
+
+        {/* <h2 className={`${bebas.className} absolute top-30 left-184 text-[8rem] md:text-[6rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`} >
             Motion Design
-        </h2>
+        </h2> */}
+
+
+        <div className="w-full absolute top-0 left-20"> 
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+          >
+            Motion
+          </ScrollFloat>
+        </div>
+        
 
         {/* Bento Grid  */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-40 w-full">
-          
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-160 w-full">
           <div
             className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
             data-aos-delay="150"
@@ -461,46 +482,29 @@ export default function Home() {
       </section>
 
 
+      {/* Web Section */}
+      <section className="relative max-w-full mx-auto min-h-[700px] mt-10 px-6 py-16 flex items-center justify-center overflow-hidden">
+
+        {/* <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
+          Web design
+        </h1> */}
+
+          <div className="w-full absolute top-0 right-30"> 
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+          >
+            Web Design
+          </ScrollFloat>
+        </div>
+
+        </section>
 
 
-
-      {/* Projects Section */}
-      {/* <section className="w-full mt-[250px] flex flex-col items-center justify-center px-6 text-center"> */}
-        {/* <ScrollFloat
-          animationDuration={1}
-          ease="back.inOut(-10)"
-          scrollStart="center bottom+=80%"
-          scrollEnd="bottom bottom-=40%"
-          stagger={0.03}
-        >
-          Projects
-        </ScrollFloat> */}
-        {/* <Masonry
-          items={items}
-          ease="power3.out"
-          duration={0.6}
-          stagger={0.05}
-          animateFrom="bottom"
-          scaleOnHover={true}
-          hoverScale={0.95}
-          blurToFocus={true}
-          colorShiftOnHover={false}
-        /> */}
-
-        {/* <MagicBento 
-          textAutoHide={true}
-          enableStars={true}
-          enableSpotlight={true}
-          enableBorderGlow={true}
-          enableTilt={true}
-          enableMagnetism={true}
-          clickEffect={true}
-          spotlightRadius={300}
-          particleCount={12}
-          glowColor="132, 0, 255"
-        />
-      </section> */}
-
+      
 
 
       {/* Contact Section */}

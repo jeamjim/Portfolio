@@ -2,6 +2,13 @@ import React, { useEffect, useMemo, useRef, ReactNode, RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import {
+  Bebas_Neue, 
+} from "next/font/google";
+
+const bebas = Bebas_Neue({weight: "400",subsets: ["latin"],});
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollFloatProps {
@@ -88,14 +95,27 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   return (
     <h2
       ref={containerRef}
-      className={`my-5 overflow-hidden ${containerClassName}`}
+      className={`
+        ${bebas.className}
+        absolute top-80 left-[510px]
+        my-5 pointer-events-none select-none
+        opacity-10 text-gray-500
+        ${containerClassName}
+      `}
     >
       <span
-        className={`inline-block text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] ${textClassName}`}
+        className={`
+          inline-block
+          text-[clamp(10rem,40vw,20rem)]
+          tracking-tight
+          font-extrabold
+          ${textClassName}
+        `}
       >
         {splitText}
       </span>
     </h2>
+
   );
 };
 
