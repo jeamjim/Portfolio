@@ -27,9 +27,6 @@ import graphic_16 from "../public/jmigs_3.png"
 
 
 
-//BACKGROUNDS
-import LightRays from './components/LightRays';
-
 // COMPONENTS
 import CircularText from "./components/CircularText";
 import ScrambledText from './components/ScrambledText';
@@ -42,6 +39,7 @@ import ScrollFloat from './components/ScrollFloat';
 import Masonry from './components/Masonry';
 import ScrollReveal from './components/ScrollReveal';
 import TrueFocus from './components/TrueFocus';
+import DecayCard from './components/DecayCard';
 
 // FONTS
 import {
@@ -73,79 +71,32 @@ const playfair = Playfair_Display({ weight: ["400", "700"], subsets: ["latin"] }
 const pacifico = Pacifico({ weight: ["400"], subsets: ["latin"] });
 const greatVibes = Great_Vibes({ weight: ["400",], subsets: ["latin"] });
 const dancing_Script = Dancing_Script({ weight: ["400", "700"], subsets: ["latin"] });
-{/* <ScrollReveal
-  baseOpacity={0}
-  enableBlur={true}
-  baseRotation={5}
-  blurStrength={10}
->
-  When does a man die? When he is hit by a bullet? No! When he suffers a disease?
-  No! When he ate a soup made out of a poisonous mushroom?
-  No! A man dies when he is forgotten!
-</ScrollReveal> */}
 
 
-//masonry
-const items = [
-    {
-      id: "1",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
-      url: "https://example.com/one",
-      height: 400,
-    },
-    {
-      id: "2",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
-      url: "https://example.com/two",
-      height: 750,
-    },
-    {
-      id: "3",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/127925925_390811888898768_5306747639628916202_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFfvVtZbLBy-eQ8Iy8pkgFB5n8kPUafJGzmfyQ9Rp8kbHpPvkTDp_PAIBpU-BumsCvh4DpjSvp0q9UpgRlGG4QV&_nc_ohc=J3axZ5PpqNEQ7kNvwGK8hQa&_nc_oc=AdlbVmraIo_ChEujcyoLkPmnASLPbMoGuV0sNcydJk-B7npp3CgsxW4ZiyFZupbZcqU&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=K_6aVLXCmpbsp-Ukz-uXMw&oh=00_AfVKXI8mDw7FT-SdP_knJ9D_1gYC4G_LNd49zASAMKXIbg&oe=68C8AEDE",
-      url: "https://example.com/three",
-      height: 600,
-    },
-    {
-      id: "4",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/178907031_480695853243704_4380366982325189988_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFT7YPEhQ-xTkIHQKF_cob-h5pJZ5z2aJaHmklnnPZolum_l-c7UXDYbCTmz1w02zoSo5OVl4ROh8ULfL_j72su&_nc_ohc=UcoTZCx7CgEQ7kNvwFPl6ZJ&_nc_oc=AdkkI70i8xhr0xdYn-78dey9ddCixRglt5NnR__-tHdiDwAIG7rW2rWziF0RSap_G9Q&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=gLdK4NeUmSyCfB70cHdFEg&oh=00_AfUOUwhufLA78Z-q9QkZbZCbBcwEu0YWLDIwveZkNgp2zQ&oe=68C88FAF",
-      url: "https://example.com/three",
-      height: 300,
-    },
-    {
-      id: "5",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/179843571_480696066577016_8773821593027985396_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOPN52wwVJYXlVw6pE17pKiksUohmIb_SKSxSiGYhv9CyxQU487Cuc3jaB_CrsN1xj9WYu4JT2zI2ZBd-u6ZNQ&_nc_ohc=2Qzwioxpr3IQ7kNvwFte6ZL&_nc_oc=AdnmvBfw0MMBY7uS3B43Cxp85HDun6yAxlhOxG-iq5Rm1z7VPV0YbF-q8vZzk_fHdv4&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=Q4691D7PWLEpBucJfuewkQ&oh=00_AfViCWLfrj9IQUToudhM5tCt1oHTJh4oMEkRIinbZx4Kog&oe=68C8A830",
-      url: "https://example.com/three",
-      height: 400,
-    },
-    {
-      id: "6",
-      img: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/505043008_2401334943599919_5310625316680681331_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeHzzsvh06rX2Z5BR-h8x4oj5q8spRNXOxPmryylE1c7E1SoROrv6OqiW_O6WtXoXQgH65imtV0Nbi86vgJ6n-Xp&_nc_ohc=iekN3FPauKQQ7kNvwHqn9e0&_nc_oc=Adl8Cncz-HQeev8FdCwKj0CgijtUwo9tLhQCFqnU8kBCCnv0UlkBSSXD9wagpdzp5uc&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=RXYIpdvLu8B7QfPw2JV2VA&oh=00_AfWRW3-cNgkrFN08Ywy78awDqNeDIYvOFjolKZ1bBoBU5w&oe=68A745B2",
-      url: "https://example.com/three",
-      height: 600,
-    },
-];
+//flowing menu images
+import mee from '../public/me2.jpg'
 
 
 // FLOWING MENU
 const demoItems = [
   { link: 'https://www.facebook.com/share/14GPy5T84Ks/', 
     text: 'FaceBook', 
-    image: "https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/457737506_2150280865371996_4679146964722032431_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHxs_Jt0CBacFktKp9nhxXuxlcznDmzYHPGVzOcObNgc-JyXSoDxrOkzD7m96CWgEDW5o9CttcQ3SdrwZnBpf6C&_nc_ohc=J5L5DuiI6I4Q7kNvwEdbSRK&_nc_oc=Adn92wpkv22G3_cvdOY3QDQABCq1tOtJW6vJZ4s92e0hD5aGK-iD_YxMBXoDAhVgok8&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=-OmXk_lzwf3bmHSLNnu4wg&oh=00_AfU3CbCLTmbQT5LGO0FKBv4EG78N3kD0tV7HkuiuUyjdWw&oe=68B6A2E6",
+    image: '/me2.jpg',
   },
 
   { link: 'https://www.instagram.com/po_chiso?igsh=MXJmZjZkOGtpemc1Yw==', 
     text: 'Instagram', 
-    image: 'https://scontent.fcgm1-1.fna.fbcdn.net/v/t1.6435-9/127925925_390811888898768_5306747639628916202_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFfvVtZbLBy-eQ8Iy8pkgFB5n8kPUafJGzmfyQ9Rp8kbHpPvkTDp_PAIBpU-BumsCvh4DpjSvp0q9UpgRlGG4QV&_nc_ohc=J3axZ5PpqNEQ7kNvwGK8hQa&_nc_oc=AdlbVmraIo_ChEujcyoLkPmnASLPbMoGuV0sNcydJk-B7npp3CgsxW4ZiyFZupbZcqU&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=K_6aVLXCmpbsp-Ukz-uXMw&oh=00_AfVKXI8mDw7FT-SdP_knJ9D_1gYC4G_LNd49zASAMKXIbg&oe=68C8AEDE'
+    image: '/meme.jpg',
   },
 
   { link: 'https://github.com/jeamjim', 
     text: 'Github', 
-    image:"https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
+    image: '/me.jpg',
   },
 
   { link: 'https://mail.google.com/mail/u/0/#inbox', 
     text: 'Email', 
-    image:"https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/481448440_2305588679841213_8339816643446045084_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGptw1oaZgEx8LlWRmGbOQIkFATxc5R-8CQUBPFzlH7wOzdeYlBsYZ3J3GTotdvR67Oyec1nVrHWuqwbDwDEKoE&_nc_ohc=HgBXiByVI_0Q7kNvwE6BleU&_nc_oc=AdlwQCcVv42GCuEvS9TCyRFcxc3c1jxp-iQSiVy2xtnt2pFVfR8165ppGaIGtmF9wKQ&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=eGXWlhpmrAHNT3xmB7ttqg&oh=00_AfWV5EGZ7TUvUBXJ3sSr9n0JXylFjU-YGXxFlr87DMI-BA&oe=68B3BE74",
+    image: '/me3.jpg',
   }
 ];
 
@@ -238,51 +189,22 @@ export default function Home() {
           </section>
         </div>
       </div>
-
-
-
-      <ScrambledText
-            className="scrambled-text-demo"
-            radius={100}
-            duration={1.2}
-            speed={0.10}
-          > 
-            
-            {/* <section className="relative w-screen mt-20 mb-30 space-y-6"> */}
-            <section className="relative inset-x-[-20] w-screen mt-40 mb-30 space-y-6">    {/* Fixed the horizontal scrolling */}
-              {/* White strip - slanted left */}
-              <div className="-rotate-3">
-                <ScrollVelocity
-                  texts={["✦ HIGHLIGHTS"]}
-                  velocity={5} 
-                  className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
-                  parallaxClassName="bg-white py-3"
-                />
-              </div>
-
-              {/* Yellow strip - slanted right */}
-              <div className="rotate-0">
-                <ScrollVelocity
-                  texts={["✦ SELECTED WORKS"]}
-                  velocity={-5} 
-                  className="text-black text-3xl md:text-4xl font-extrabold tracking-wide"
-                  parallaxClassName="bg-yellow-200 py-3"
-                />
-              </div>
-            </section>
-          </ScrambledText>
           
       
 
       {/* About Section */}
       <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 flex items-end justify-end overflow-hidden">
-        <h1 className="absolute top-0 left-0 text-[10rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
-          ABOUT <br /> ME
-        </h1>
+        className="relative max-w-full mx-auto min-h-[700px] mt-20 px-6 flex items-end justify-end overflow-hidden">
+        {/* <h1 className={`${bebas.className} absolute top-0 left-0 text-[10rem] md:text-[20rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
+          ABOUT <br/> ME
+        </h1> */}
+
+        <DecayCard width={600} height={600} image="/meme.jpg">
+          <h2><br/></h2>
+        </DecayCard>
 
         <div className="relative max-w-7xl flex items-start justify-between z-10"
-          data-aos-delay="300"
+          data-aos-delay="150"
           data-aos="fade-up">
           <div className="w-1/2">
             <h1 className="text-2xl md:text-1xl font-extrabold leading-none">
@@ -295,7 +217,7 @@ export default function Home() {
 
           <div className="w-1/3 flex flex-col gap-2 text-gray-300 text-sm md:text-[-1rem]">
             <p>
-              I am a web designer and a self taught graphic designer based in
+              I am a creative designer and a self taught graphic designer based in
               the Philippines. I specialize in interactive, engaging designs.
             </p>
             <p>
@@ -311,14 +233,17 @@ export default function Home() {
 
       {/* graphics Section */}
       <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 py-16 flex items-center justify-center overflow-hidden"
-      >
-        <h1 className="absolute top-0 left-0 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
-          Graphics
+        className="relative max-w-full mx-auto min-h-[700px] mt-75 px-6 py-16 flex items-center justify-center overflow-hidden">
+        <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
+          Skills & Projects
         </h1>
 
+        <h2 className={`${bebas.className} absolute top-60 left-184 text-[8rem] md:text-[6rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`} >
+            Graphic Design
+        </h2>
+
         {/* Bento Grid  */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-40 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-70 w-full">
           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
           data-aos-delay="50"
           data-aos="fade-up">
@@ -472,12 +397,12 @@ export default function Home() {
         </div>
       </section>
 
+  {/* Motion Section */}
       <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 py-16 flex items-center justify-center overflow-hidden"
-      >
-        <h1 className="absolute top-0 left-0 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none">
-          Motions
-        </h1>
+        className="relative max-w-full mx-auto min-h-[700px] mt-50 px-6 py-16 flex items-center justify-center overflow-hidden">
+        <h2 className={`${bebas.className} absolute top-30 left-184 text-[8rem] md:text-[6rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`} >
+            Motion Design
+        </h2>
 
         {/* Bento Grid  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-40 w-full">
