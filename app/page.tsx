@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import AOS from "aos";
@@ -40,6 +41,16 @@ import Masonry from './components/Masonry';
 import ScrollReveal from './components/ScrollReveal';
 import TrueFocus from './components/TrueFocus';
 import DecayCard from './components/DecayCard';
+import Carousel from './components/Carousel';
+
+
+
+const images = [
+  "/me2.jpg",
+  "/meme.jpg",
+  "/me.jpg",
+  "/me3.jpg",
+];
 
 // FONTS
 import {
@@ -71,6 +82,9 @@ const playfair = Playfair_Display({ weight: ["400", "700"], subsets: ["latin"] }
 const pacifico = Pacifico({ weight: ["400"], subsets: ["latin"] });
 const greatVibes = Great_Vibes({ weight: ["400",], subsets: ["latin"] });
 const dancing_Script = Dancing_Script({ weight: ["400", "700"], subsets: ["latin"] });
+
+
+
 
 
 //flowing menu images
@@ -482,14 +496,17 @@ export default function Home() {
       </section>
 
 
+
+
+
       {/* Web Section */}
-      <section className="relative max-w-full mx-auto min-h-[700px] mt-10 px-6 py-16 flex items-center justify-center overflow-hidden">
+      <section className=" relative max-w-full mx-auto min-h-[1400px] px-6 py-16 flex items-center justify-center overflow-hidden">
 
         {/* <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
           Web design
         </h1> */}
 
-          <div className="w-full absolute top-0 right-30"> 
+        <div className="w-full absolute top-0 right-27"> 
           <ScrollFloat
             animationDuration={1}
             ease='back.inOut(2)'
@@ -500,6 +517,18 @@ export default function Home() {
             Web Design
           </ScrollFloat>
         </div>
+
+          <div className="absolute top-75 right-0 " style={{ height: '600px', position: 'relative' }}>
+            <Carousel
+              baseWidth={1100}
+              baseHeight={620}
+              autoplay={false}
+              autoplayDelay={3000}
+              pauseOnHover={true}
+              loop={true}
+              round={false}
+            />
+          </div>  
 
         </section>
 
