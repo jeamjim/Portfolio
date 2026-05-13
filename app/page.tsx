@@ -397,11 +397,34 @@ export default function Home() {
 
 {/* Web Section */}
 <section className="relative w-full overflow-hidden px-6 py-24">
-  <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-16">
+
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-12">
+
+    {/* Section Header */}
+    <div
+      className="flex flex-col items-center text-center gap-4"
+      data-aos="fade-up"
+    >
+      <p className="uppercase tracking-[0.3em] text-sm text-yellow-400 font-semibold">
+        Web Design
+      </p>
+
+      <h2 className="text-4xl md:text-6xl font-extrabold leading-tight">
+        Designing Modern <br />
+        Digital Experiences
+      </h2>
+
+      {/* <p className="max-w-2xl text-gray-400 text-sm md:text-base">
+        A showcase of website designs focused on clean interfaces,
+        responsive layouts, user experience, and visually engaging interactions.
+      </p> */}
+    </div>
+
     {/* Carousel */}
     <div
       className="w-full flex justify-center"
       data-aos="fade-up"
+      data-aos-delay="150"
     >
       <div className="w-full max-w-6xl">
         <Carousel
@@ -415,6 +438,7 @@ export default function Home() {
         />
       </div>
     </div>
+
   </div>
 </section>
 
