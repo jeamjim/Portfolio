@@ -206,331 +206,217 @@ export default function Home() {
           
       
 
-      {/* About Section */}
-      <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-20 px-6 flex items-end justify-end overflow-hidden">
-        {/* <h1 className={`${bebas.className} absolute top-0 left-0 text-[10rem] md:text-[20rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
-          ABOUT <br/> ME
-        </h1> */}
+    {/* About Section */}
+    <section className="relative w-full overflow-hidden px-6 py-45">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-end justify-between gap-12">
 
-        <DecayCard width={600} height={600} image="/meme.jpg">
-          <h2><br/></h2>
-        </DecayCard>
+          {/* Image/Card */}
+          <div
+            className="w-full lg:w-1/2 flex justify-center"
+            data-aos="fade-up"
+          >
+            <DecayCard
+              width={550}
+              height={550}
+              image="/meme.jpg"
+            >
+              <h2><br /></h2>
+            </DecayCard>
+          </div>
 
-        <div className="relative max-w-7xl flex items-start justify-between z-10"
-          data-aos-delay="150"
-          data-aos="fade-up">
-          <div className="w-1/2">
-            <h1 className="text-2xl md:text-1xl font-extrabold leading-none">
-              HI! I'M <span className="text-yellow-400">JAMES</span>, <br />
+          {/* Text Content */}
+          <div
+            className="w-full lg:w-1/2 flex flex-col gap-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+
+            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-extrabold leading-tight">
+              HI! I'M <span className="text-yellow-600">JAMES</span>, <br />
               I LOVE MAKING THINGS <br />
               THAT HELP PEOPLE DO <br />
               THEIR THING.
             </h1>
-          </div>
 
-          <div className="w-1/3 flex flex-col gap-2 text-gray-300 text-sm md:text-[-1rem]">
-            <p>
-              I am a creative designer and a self taught graphic designer based in
-              the Philippines. I specialize in interactive, engaging designs.
-            </p>
-            <p>
-              As an IT graduate I am more than willing to discover things unknown to
-              me and be of purpose to someone's company or business.
-            </p>
-            <a href="/more-about-me" className="font-bold uppercase text-white hover:text-orange-500 transition" > More About Me <span className="hover:text-rotate-20">→</span> </a>
-          </div>
-        </div>
-      </section>
+            <div className="max-w-md flex flex-col gap-4 text-gray-300 text-base">
+              <p>
+                I am a creative designer and a self taught graphic designer based in
+                the Philippines. I specialize in interactive, engaging designs.
+              </p>
 
+              <p>
+                As an IT graduate I am more than willing to discover things unknown to
+                me and be of purpose to someone's company or business.
+              </p>
 
-
-      {/* graphics Section */}
-      <section
-        className="relative max-w-full mx-auto min-h-[700px] mt-75 px-6 py-16 flex items-center justify-center overflow-hidden">
-        <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[15rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
-          What i do
-        </h1>
-
-        <ScrollFloat
-          animationDuration={1}
-          ease='back.inOut(2)'
-          scrollStart='center bottom+=50%'
-          scrollEnd='bottom bottom-=40%'
-          stagger={0.03}
-        >
-          Graphics
-        </ScrollFloat>
-
-
-        {/* Bento Grid  */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-160 w-full">
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="50"
-          data-aos="fade-up">
-            <Image
-              src={graphic_1}
-              className="w-full h-full object-scale-down"
-              alt="Design 1"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="100"
-          data-aos="fade-up">
-            <Image
-              src={graphic_2}
-              alt="Design 2"
-              className="w-full h-full object-contain"
-            />
+              <a
+                href="/more-about-me"
+                className="font-bold uppercase text-white hover:text-orange-500 transition"
+              >
+                More About Me →
+              </a>
             </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="150"
-          data-aos="fade-up">
-            <Image
-              src={graphic_3}
-              alt="Design 3"
-              className="w-full h-full object-contain"
-            />
           </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="200"
-          data-aos="fade-up">
-            <Image
-              src={graphic_8}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="250"
-          data-aos="fade-up">
-            <Image
-              src={graphic_5}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="300"
-          data-aos="fade-up">
-            <Image
-              src={graphic_6}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="350"
-          data-aos="fade-up">
-            <Image
-              src={graphic_7}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="400"
-          data-aos="fade-up">
-            <Image
-              src={graphic_9}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="450"
-          data-aos="fade-up">
-            <Image
-              src={graphic_10}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="500"
-          data-aos="fade-up">
-            <Image
-              src={graphic_11}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="550"
-          data-aos="fade-up">
-            <Image
-              src={graphic_12}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="600"
-          data-aos="fade-up">
-            <Image
-              src={graphic_13}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="600"
-          data-aos="fade-up">
-            <Image
-              src={graphic_14}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="600"
-          data-aos="fade-up">
-            <Image
-              src={graphic_15}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-           <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-          data-aos-delay="600"
-          data-aos="fade-up">
-            <Image
-              src={graphic_16}
-              alt="Design 4"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          
         </div>
-      </section>
+</section>
 
 
-  {/* Motion Section */}
-      <section className="relative max-w-full mx-auto min-h-[700px] px-6 py-16 flex items-center justify-center overflow-hidden">
-        
 
-        {/* <h2 className={`${bebas.className} absolute top-30 left-184 text-[8rem] md:text-[6rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`} >
-            Motion Design
-        </h2> */}
+{/* graphics Section */}
+  <section className=" relative w-full overflow-hidden px-6 py-55">
 
+    {/* Background Heading */}
+    <h1
+      className={`${bebas.className} absolute top-0 left-1/2 -translate-x-1/2 text-[4rem] sm:text-[7rem] lg:text-[12rem] tracking-tighter font-extrabold text-gray-500/10 leading-none pointer-events-none select-none whitespace-nowrap`}
+      data-aos="fade-up">
+      WHAT I DO
+    </h1>
 
-        <div className="w-full absolute top-0 left-20"> 
-          <ScrollFloat
-            animationDuration={1}
-            ease='back.inOut(2)'
-            scrollStart='center bottom+=50%'
-            scrollEnd='bottom bottom-=40%'
-            stagger={0.03}
-          >
-            Motion
-          </ScrollFloat>
-        </div>
-        
+    <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center gap-16">
+      {/* Floating Title */}
+      <div
+      className="flex flex-col items-center text-center gap-4"
+      data-aos="fade-up"
+    >
+      <p className="uppercase tracking-[0.3em] text-sm text-yellow-400 font-semibold">
+        Graphic Design
+      </p>
 
-        {/* Bento Grid  */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 relative z-10 max-w-6xl mt-160 w-full">
+      <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
+        Graphics that  <br />
+        tells a story
+      </h2>
+
+      {/* <p className="max-w-2xl text-gray-400 text-sm md:text-base">
+        A collection of motion design projects showcasing animated visuals,
+        transitions, branding, and engaging digital storytelling.
+      </p> */}
+    </div>
+
+      {/* Bento Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+
+        {[
+          graphic_1,
+          graphic_2,
+          graphic_3,
+          graphic_8,
+          graphic_5,
+          graphic_6,
+          graphic_7,
+          graphic_9,
+          graphic_10,
+          graphic_11,
+          graphic_12,
+          graphic_13,
+          graphic_14,
+          graphic_15,
+          graphic_16,
+        ].map((graphic, index) => (
           <div
-            className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-            data-aos-delay="150"
+            key={index}
+            className="group rounded-2xl overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1"
             data-aos="fade-up"
+            data-aos-delay={index * 50}
           >
-            <video
-              className="w-full h-full object-cover aspect-[9/16]"
-              src="/videos/motion_1.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
+            <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <Image
+                src={graphic}
+                alt={`Design ${index + 1}`}
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition duration-500"
+              />
+            </div>
           </div>
+        ))}
+
+      </div>
+    </div>
+</section>
 
 
-          <div
-            className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-            data-aos-delay="150"
-            data-aos="fade-up"
-          >
+{/* Motion Section */}
+<section className="relative w-full overflow-hidden px-6 py-24">
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-12">
+    {/* Section Header */}
+    <div
+      className="flex flex-col items-center text-center gap-4"
+      data-aos="fade-up"
+    >
+      <p className="uppercase tracking-[0.3em] text-sm text-yellow-400 font-semibold">
+        Motion Design
+      </p>
+
+      <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
+        Bringing Ideas To Life <br />
+        Through Motion
+      </h2>
+
+      {/* <p className="max-w-2xl text-gray-400 text-sm md:text-base">
+        A collection of motion design projects showcasing animated visuals,
+        transitions, branding, and engaging digital storytelling.
+      </p> */}
+    </div>
+
+    {/* Video Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+
+      {[
+        "/videos/motion_1.mp4",
+        "/videos/motion_2.mp4",
+        "/videos/motion_3.mp4",
+      ].map((video, index) => (
+        <div
+          key={index}
+          className="group rounded-2xl overflow-hidden shadow-lg"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div className="relative aspect-[9/16] overflow-hidden">
             <video
-              src="/videos/motion_2.mp4"
-              poster="/images/motion_2.jpg"
+              src={video}
               autoPlay
               loop
               muted
               playsInline
               preload="auto"
-              className="w-full h-full object-cover aspect-[9/16]"
-            />
-          </div>
-
-          <div
-            className="rounded-2xl overflow-hidden shadow-lg hover:scale-101 transition-transform duration-300 grayscale hover:grayscale-0"
-            data-aos-delay="150"
-            data-aos="fade-up"
-          >
-            <video
-              src="/videos/motion_3.mp4"
-              poster="/images/motion_2.jpg"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover aspect-[9/16]"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 group-hover:scale-[1.02]"
             />
           </div>
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
 
 
 
 
 
-      {/* Web Section */}
-      <section className=" relative max-w-full mx-auto min-h-[1400px] px-6 py-16 flex items-center justify-center overflow-hidden">
-
-        {/* <h1 className={`${bebas.className} absolute top-0 left-10 text-[8rem] md:text-[10rem] tracking-tighter font-extrabold text-gray-500 opacity-10 leading-none pointer-events-none select-none`}>
-          Web design
-        </h1> */}
-
-        <div className="w-full absolute top-0 right-27"> 
-          <ScrollFloat
-            animationDuration={1}
-            ease='back.inOut(2)'
-            scrollStart='center bottom+=50%'
-            scrollEnd='bottom bottom-=40%'
-            stagger={0.03}
-          >
-            Web Design
-          </ScrollFloat>
-        </div>
-
-          <div className="absolute top-75 right-0 " style={{ height: '600px', position: 'relative' }}>
-            <Carousel
-              baseWidth={1100}
-              baseHeight={620}
-              autoplay={false}
-              autoplayDelay={3000}
-              pauseOnHover={true}
-              loop={true}
-              round={false}
-            />
-          </div>  
-
-        </section>
+{/* Web Section */}
+<section className="relative w-full overflow-hidden px-6 py-24">
+  <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-16">
+    {/* Carousel */}
+    <div
+      className="w-full flex justify-center"
+      data-aos="fade-up"
+    >
+      <div className="w-full max-w-6xl">
+        <Carousel
+          baseWidth={1200}
+          baseHeight={700}
+          autoplay={false}
+          autoplayDelay={3000}
+          pauseOnHover={true}
+          loop={true}
+          round={false}
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
 
       
