@@ -339,6 +339,7 @@ export default function Home() {
 {/* Motion Section */}
 <section className="relative w-full overflow-hidden px-6 py-24">
   <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-12">
+    
     {/* Section Header */}
     <div
       className="flex flex-col items-center text-center gap-4"
@@ -352,28 +353,18 @@ export default function Home() {
         Bringing Ideas To Life <br />
         Through Motion
       </h2>
-
-      {/* <p className="max-w-2xl text-gray-400 text-sm md:text-base">
-        A collection of motion design projects showcasing animated visuals,
-        transitions, branding, and engaging digital storytelling.
-      </p> */}
     </div>
 
-    {/* Video Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-
-      {[
-        "/videos/motion_1.mp4",
-        "/videos/motion_2.mp4",
-        "/videos/motion_3.mp4",
-      ].map((video, index) => (
+    {/* Large Centered Video */}
+    <div className="flex justify-center w-full">
+      {["/videos/mainvideo.mp4"].map((video, index) => (
         <div
           key={index}
-          className="group rounded-2xl overflow-hidden shadow-lg"
+          className="group w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl"
           data-aos="fade-up"
           data-aos-delay={index * 100}
         >
-          <div className="relative aspect-[9/16] overflow-hidden">
+          <div className="relative aspect-video overflow-hidden">
             <video
               src={video}
               autoPlay
@@ -381,13 +372,13 @@ export default function Home() {
               muted
               playsInline
               preload="auto"
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500 group-hover:scale-[1.02]"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.02]"
             />
           </div>
         </div>
       ))}
-
     </div>
+
   </div>
 </section>
 
