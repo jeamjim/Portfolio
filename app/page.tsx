@@ -11,7 +11,6 @@ import MagicBento from './components/MagicBento'
 import graphic_1 from "../public/1737957750205.jpeg"
 import graphic_2 from "../public/1737957731776.jpeg"
 import graphic_3 from "../public/New (1).webp"
-import graphic_4 from "../public/New (2).webp"
 import graphic_5 from "../public/New (3).webp"
 import graphic_6 from "../public/New (4).webp"
 import graphic_7 from "../public/New (5).webp"
@@ -21,10 +20,17 @@ import graphic_10 from "../public/New (8).webp"
 import graphic_11 from "../public/New (9).webp"
 import graphic_12 from "../public/New.webp"
 import graphic_13 from "../public/prophecy.webp"
-
 import graphic_14 from "../public/jmigs_1.png"
 import graphic_15 from "../public/jmigs_2.png"
 import graphic_16 from "../public/jmigs_3.png"
+import graphic_17 from "../public/Graphic1.png"
+import graphic_18 from "../public/Graphic2.png"
+import graphic_19 from "../public/Graphic3.png"
+import graphic_20 from "../public/Graphic4.png"
+import graphic_21 from "../public/Graphic5.png"
+import graphic_22 from "../public/Graphic6.png"
+import graphic_23 from "../public/Graphic7.png"
+
 
 
 
@@ -42,6 +48,8 @@ import ScrollReveal from './components/ScrollReveal';
 import TrueFocus from './components/TrueFocus';
 import DecayCard from './components/DecayCard';
 import Carousel from './components/Carousel';
+
+import CircularGallery from './components/CircularGallery'
 
 
 
@@ -263,6 +271,25 @@ export default function Home() {
 
 
 
+{/* Apparel Section */}
+<section className="relative w-full overflow-hidden px-6 py-45">
+  <div style={{ height: '800px', position: 'relative' }}>
+    <CircularGallery
+      bend={1}
+      textColor="#ffffff"
+      borderRadius={0.05}
+      scrollEase={0.05}
+      // Optionally load a custom font for the labels.
+      // Accepts a stylesheet URL (e.g. Google Fonts) or a direct font file.
+      fontUrl=""
+      font="bold 30px Orbitron"
+      scrollSpeed={2}
+    />
+  </div>
+</section>
+
+
+
 {/* graphics Section */}
   <section className=" relative w-full overflow-hidden px-6 py-55">
 
@@ -313,6 +340,13 @@ export default function Home() {
           graphic_14,
           graphic_15,
           graphic_16,
+          graphic_17,
+          graphic_18,
+          graphic_19,
+          graphic_20,
+          graphic_21,
+          graphic_22,
+          graphic_23,
         ].map((graphic, index) => (
           <div
             key={index}
